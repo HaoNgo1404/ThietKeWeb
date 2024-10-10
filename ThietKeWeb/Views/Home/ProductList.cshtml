@@ -1,0 +1,265 @@
+﻿
+@{
+    ViewBag.Title = "ProductList";
+    Layout = "~/Views/Shared/MasterLayout.cshtml";
+}
+
+<link href="~/Views/Shared/MasterLayout.cshtml" rel="stylesheet" type="text/css" />
+<style type="text/css">
+    .prod-list {
+        width: 100%;
+        background-color: yellowgreen;
+        height: 30px;
+        margin-bottom: 20px;
+    }
+
+    h2 {
+        text-align: left;
+        vertical-align: middle;
+    }
+</style>
+<header class="header">
+    <a href="~/Home/Index"><img src="~/Content/images/logo1.png" class="logo" /></a>
+    <div class="head-middle">
+        <input type="text" class="search" placeholder="Mời nhập nước uống bạn muốn" />
+        <button type="button" class="search-button">
+            <img src="~/Content/images/search-icon.JPG" class="search-image" />
+        </button>
+    </div>
+    <ul class="menu">
+        <li><a href="shopping.html" id="selection" class="cart"><img src="~/Content/images/Shopping-cart-icon.png" class="selection-image" />Giỏ hàng<i class="fas fa-circle"><span class="cart-count">0</span></i></a></li>
+        <li><a href="myfavorite.html" id="selection"><img src="~/Content/images/Heart-icon.png" class="selection-image" />Yêu thích</a></li>
+        <li><a href="account.html" id="selection"><img src="~/Content/images/Character-icon.png" class="selection-image" />Đăng Nhập/Đăng Ký</a></li>
+    </ul>
+    <div class="list-background">
+        <ul class="list">
+            <li><a href="~/Home/Index" class="menu1">Trang chủ</a></li>
+            <li class="dropdown-btn">
+                <a href="~/Home/ProductList" class="menu2">Thực đơn</a>
+                <ul class="dropdown-content">
+                    <li class="dropdown-content-list">
+                        <a href="~/Home/ProductList" class="content1">Cà phê</a>
+                        <ul class="prod-name">
+                            <li class="prod-name-list"><a href="" class="prod-name-a">Cà phê đen</a></li>
+                            <li class="prod-name-list"><a href="" class="prod-name-a">Bạc Xỉu</a></li>
+                            <li class="prod-name-list"><a href="" class="prod-name-a">Cà phê Caramel</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown-content-list">
+                        <a href="~/Home/ProductList" class="content2">Trà</a>
+                        <ul class="prod-name">
+                            <li class="prod-name-list"><a href="" class="prod-name-a">Trà Dâu</a></li>
+                            <li class="prod-name-list"><a href="" class="prod-name-a">Trà Thạch Dâu</a></li>
+                            <li class="prod-name-list"><a href="" class="prod-name-a">Trà Nho</a></li>
+                            <li class="prod-name-list"><a href="" class="prod-name-a">Trà Vải</a></li>
+                            <li class="prod-name-list"><a href="" class="prod-name-a">Trà Đen</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown-content-list">
+                        <a href="~/Home/ProductList" class="content1">Đá Xay</a>
+                        <ul class="prod-name">
+                            <li class="prod-name-list"><a href="" class="prod-name-a">Orio Đá Xay</a></li>
+                            <li class="prod-name-list"><a href="" class="prod-name-a">Milo Đá Xay</a></li>
+                            <li class="prod-name-list"><a href="" class="prod-name-a">Socola Đá Xay</a></li>
+                            <li class="prod-name-list"><a href="" class="prod-name-a">Caramel Đá Xay</a></li>
+                            <li class="prod-name-list"><a href="" class="prod-name-a">Dâu Đá Xay</a></li>
+                            <li class="prod-name-list"><a href="" class="prod-name-a">Match Socola Đá Xay</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown-content-list">
+                        <a href="~/Home/ProductList" class="content3">Khác</a>
+                        <ul class="prod-name">
+                            <li class="prod-name-list"><a href="" class="prod-name-a">Matcha</a></li>
+                            <li class="prod-name-list"><a href="" class="prod-name-a">Chanh Tắc Mật Ong</a></li>
+                            <li class="prod-name-list"><a href="" class="prod-name-a">Soda Chanh</a></li>
+                            <li class="prod-name-list"><a href="" class="prod-name-a">Sữa Tươi Trân Châu Đường Nâu</a></li>
+                            <li class="prod-name-list"><a href="" class="prod-name-a">Trà Sữa Truyền Thống</a></li>
+                            <li class="prod-name-list"><a href="" class="prod-name-a">Trà Sữa Trân Châu Trắng</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+            <li><a href="~/Home/Recruit" class="menu3">Tuyển dụng</a></li>
+            <li><a href="~/Home/Address" class="menu3">Địa chỉ</a></li>
+        </ul>
+    </div>
+</header>
+<section id="featureProd">
+    <div class="prod-list">
+        <h2>Các loại thức uống</h2>
+    </div>
+    <div class="prod-container">
+        <div class="prod">
+            <a href="">
+                <img src="~/Content/images/sp1.png" class="prod-item" />
+                <h3>Cà phê đen</h3>
+                <p class="prod-description"></p>
+                <p class="prod-price">20.000 VND</p>
+            </a>
+        </div>
+        <div class="prod">
+            <a href="">
+                <img src="~/Content/images/sp2.png" class="prod-item" />
+                <h3>Matcha</h3>
+                <p class="prod-description"></p>
+                <p class="prod-price">25.000 VND</p>
+            </a>
+        </div>
+        <div class="prod">
+            <a href="">
+                <img src="~/Content/images/sp3.png" class="prod-item" />
+                <h3>Bạc Xỉu</h3>
+                <p class="prod-description"></p>
+                <p class="prod-price">20.000 VND</p>
+            </a>
+        </div>
+        <div class="prod">
+            <a href="">
+                <img src="~/Content/images/sp4.png" class="prod-item" />
+                <h3>Chanh Tắc Mật Ong</h3>
+                <p class="prod-description"></p>
+                <p class="prod-price">30.000 VND</p>
+            </a>
+        </div>
+        <div class="prod">
+            <a href="">
+                <img src="~/Content/images/sp5.png" class="prod-item" />
+                <h3>Trà Dâu</h3>
+                <p class="prod-description"></p>
+                <p class="prod-price">35.000 VND</p>
+            </a>
+        </div>
+    </div>
+    <div class="prod-container">
+        <div class="prod">
+            <a href="">
+                <img src="~/Content/images/sp6.png" class="prod-item" />
+                <h3>Soda Chanh</h3>
+                <p class="prod-description"></p>
+                <p class="prod-price">25.000 VND</p>
+            </a>
+        </div>
+        <div class="prod">
+            <a href="">
+                <img src="~/Content/images/sp7.png" class="prod-item-special1" />
+                <h3>Cà Phê Caramel</h3>
+                <p class="prod-description"></p>
+                <p class="prod-price">20.000 VND</p>
+            </a>
+        </div>
+        <div class="prod">
+            <a href="">
+                <img src="~/Content/images/sp8.png" class="prod-item" />
+                <h3>Trà Thạch Dâu</h3>
+                <p class="prod-description"></p>
+                <p class="prod-price">25.000 VND</p>
+            </a>
+        </div>
+        <div class="prod">
+            <a href="">
+                <img src="~/Content/images/sp9.png" class="prod-item-special2" />
+                <h3>Trà Nho</h3>
+                <p class="prod-description"></p>
+                <p class="prod-price">35.000 VND</p>
+            </a>
+        </div>
+        <div class="prod">
+            <a href="">
+                <img src="~/Content/images/sp10.png" class="prod-item" />
+                <h3>Orio Đá Xay</h3>
+                <p class="prod-description"></p>
+                <p class="prod-price">30.000 VND</p>
+            </a>
+        </div>
+    </div>
+    <div class="prod-container">
+        <div class="prod">
+            <a href="">
+                <img src="~/Content/images/sp11.png" class="prod-item-special1" />
+                <h3>Milo Đá Xay</h3>
+                <p class="prod-description"></p>
+                <p class="prod-price">25.000 VND</p>
+            </a>
+        </div>
+        <div class="prod">
+            <a href="">
+                <img src="~/Content/images/sp12.png" class="prod-item" />
+                <h3>Socola Đá Xay</h3>
+                <p class="prod-description"></p>
+                <p class="prod-price">35.000 VND</p>
+            </a>
+        </div>
+        <div class="prod">
+            <a href="">
+                <img src="~/Content/images/sp13.png" class="prod-item-special1" />
+                <h3>Caramel Đá Xay</h3>
+                <p class="prod-description"></p>
+                <p class="prod-price">35.000 VND</p>
+            </a>
+        </div>
+        <div class="prod">
+            <a href="">
+                <img src="~/Content/images/sp14.png" class="prod-item-special1" />
+                <h3>Dâu Đá Xay</h3>
+                <p class="prod-description"></p>
+                <p class="prod-price">30.000 VND</p>
+            </a>
+        </div>
+        <div class="prod">
+            <a href="">
+                <img src="~/Content/images/sp15.png" class="prod-item" />
+                <h3>Matcha Socola Đá Xay</h3>
+                <p class="prod-description"></p>
+                <p class="prod-price">25.000 VND</p>
+            </a>
+        </div>
+    </div>
+    <div class="prod-container">
+        <div class="prod">
+            <a href="">
+                <img src="~/Content/images/sp16.png" class="prod-item" />
+                <h3>Sữa Tươi Trân Châu Đường Nâu</h3>
+                <p class="prod-description"></p>
+                <p class="prod-price">20.000 VND</p>
+            </a>
+        </div>
+        <div class="prod">
+            <a href="">
+                <img src="~/Content/images/sp17.png" class="prod-item" />
+                <h3>Trà Sữa Truyền Thống</h3>
+                <p class="prod-description"></p>
+                <p class="prod-price">30.000 VND</p>
+            </a>
+        </div>
+        <div class="prod">
+            <a href="">
+                <img src="~/Content/images/sp18.png" class="prod-item-special2" />
+                <h3>Trà Vải</h3>
+                <p class="prod-description"></p>
+                <p class="prod-price">35.000 VND</p>
+            </a>
+        </div>
+        <div class="prod">
+            <a href="">
+                <img src="~/Content/images/sp19.png" class="prod-item-special2" />
+                <h3>Trà Sữa Trân Châu Trắng</h3>
+                <p class="prod-description"></p>
+                <p class="prod-price">30.000 VND</p>
+            </a>
+        </div>
+        <div class="prod">
+            <a href="">
+                <img src="~/Content/images/sp20.png" class="prod-item" />
+                <h3>Trà Đen</h3>
+                <p class="prod-description"></p>
+                <p class="prod-price">25.000 VND</p>
+            </a>
+        </div>
+    </div>
+</section>
+<footer id="footer">
+    Copy &copy; Ella Designs &amp; Fahasha Designs<br />
+    Powered by Ella and Fahasha
+    <p>About - Services - Portfolio - Contact Us - Term of Trade</p>
+</footer>
+

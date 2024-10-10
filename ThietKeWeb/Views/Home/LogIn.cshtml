@@ -1,0 +1,93 @@
+﻿
+@{
+    ViewBag.Title = "LogIn";
+    Layout = "~/Views/Shared/MasterLayout.cshtml";
+}
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<style type="text/css">
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    body {
+        background-color: white;
+        font-family: Arial, sans-serif;
+    }
+    .head-title {
+        background-color: #347bb7;
+        width: 100%;
+        border-radius:4px;
+    }
+    h2{
+        text-align:center;
+        color:white;
+    }
+    .container{
+        width:400px;
+        height:270px;
+        border:1px solid;
+        margin: 50px auto;
+    }
+    .formgroup {
+        margin-left: 5px;
+        margin-top: 2px;
+    }
+    label{
+        margin-bottom: 4px;
+    }
+    .checkbox {
+        margin-left: 5px;
+    }
+    .email{
+        border-radius: 4px;
+    }
+    .password{
+        border-radius: 4px;
+    }
+    .check1{
+        float:left;
+    }
+    .check2{
+        float:right;
+    }
+    .submit{
+        clear:both;
+    }
+    a{
+        color: blue;
+        text-decoration:none;
+        font-size:14px;
+    }
+</style>
+<div class="container">
+    <div class="head-title"><h2>Đăng nhập</h2></div>
+    <form >
+        <div class="formgroup">
+            <label for="inputEmail" >Email</label>
+            <div >
+                <input type="email" class="email" placeholder="Email" />
+            </div>
+        </div>
+        <div class="formgroup">
+            <label for="inputPassword" >Mật khẩu</label>
+            <div>
+                <input type="password" class="password" placeholder="Mật khẩu" />
+            </div>
+        </div>
+        <div class="formgroup">
+            <div class="checkbox">
+                    <label><input type="checkbox" />Remember me</label>
+            </div>
+        </div>
+        <div>
+            <a href="" class="check1">Quên mật khẩu?</a>
+            <a href="~/Home/Register" class="check2">Đăng ký</a>
+        </div>
+        <div class="submit">
+            <button type="submit" class="btn btn-primary">Đăng nhập</button>
+        </div>
+    </form>
+</div>
+
+
