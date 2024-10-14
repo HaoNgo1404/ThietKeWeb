@@ -1,93 +1,42 @@
 ﻿
 @{
-    ViewBag.Title = "LogIn";
+    ViewBag.Title = "Login";
     Layout = "~/Views/Shared/MasterLayout.cshtml";
 }
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-<style type="text/css">
-    * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-    }
-    body {
-        background-color: white;
-        font-family: Arial, sans-serif;
-    }
-    .head-title {
-        background-color: #347bb7;
-        width: 100%;
-        border-radius:4px;
-    }
-    h2{
-        text-align:center;
-        color:white;
-    }
-    .container{
-        width:400px;
-        height:270px;
-        border:1px solid;
-        margin: 50px auto;
-    }
-    .formgroup {
-        margin-left: 5px;
-        margin-top: 2px;
-    }
-    label{
-        margin-bottom: 4px;
-    }
-    .checkbox {
-        margin-left: 5px;
-    }
-    .email{
-        border-radius: 4px;
-    }
-    .password{
-        border-radius: 4px;
-    }
-    .check1{
-        float:left;
-    }
-    .check2{
-        float:right;
-    }
-    .submit{
-        clear:both;
-    }
-    a{
-        color: blue;
-        text-decoration:none;
-        font-size:14px;
-    }
-</style>
-<div class="container">
-    <div class="head-title"><h2>Đăng nhập</h2></div>
-    <form >
-        <div class="formgroup">
-            <label for="inputEmail" >Email</label>
-            <div >
-                <input type="email" class="email" placeholder="Email" />
-            </div>
-        </div>
-        <div class="formgroup">
-            <label for="inputPassword" >Mật khẩu</label>
-            <div>
-                <input type="password" class="password" placeholder="Mật khẩu" />
-            </div>
-        </div>
-        <div class="formgroup">
-            <div class="checkbox">
-                    <label><input type="checkbox" />Remember me</label>
-            </div>
-        </div>
-        <div>
-            <a href="" class="check1">Quên mật khẩu?</a>
-            <a href="~/Home/Register" class="check2">Đăng ký</a>
-        </div>
-        <div class="submit">
-            <button type="submit" class="btn btn-primary">Đăng nhập</button>
-        </div>
-    </form>
-</div>
-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap"
+          rel="stylesheet" />
+    <link rel="stylesheet"
+          href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <title>Signup</title>
+    <link href="~/Content/stylesheet1.css" rel="stylesheet" />
+    <link href="~/Content/stylesheet1.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="login">
+        <h1 class="login-heading">Login</h1>
+        <button class="login-social">
+            <i class="fa fa-google login-social-icon"></i>
+            <span class="login-social-text">Login with Google</span>
+        </button>
+        <div class="login-or"><span>Or</span></div>
+        <form action="#" class="login-form" autocomplete="off">
+            <label for="email" class="login-label">Email</label>
+            <input type="email" id="email" class="login-input" placeholder="Eg: nhan1905@gmai.com">
+            <label for="password" class="login-label">Password</label>
+            <input type="password" id="password" class="login-input">
+            <button class="login-submit">Login</button>
+        </form>
+        <p class="login-already">
+            <a href="" >Forgot password?</a>
+            <a href="~/Home/Register" class="login-login-link">Sign up</a>
+        </p>
+    </div>
+</body>
+</html>
 
