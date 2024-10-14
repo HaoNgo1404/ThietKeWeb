@@ -3,100 +3,44 @@
     ViewBag.Title = "Register";
     Layout = "~/Views/Shared/MasterLayout.cshtml";
 }
-
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-<style type="text/css">
-    * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-    }
-
-    body {
-        background-color: white;
-        font-family: Arial, sans-serif;
-    }
-
-    .head-title {
-        background-color: #347bb7;
-        width: 100%;
-        border-radius: 4px;
-    }
-
-    h2 {
-        text-align: center;
-        color: white;
-    }
-
-    .container {
-        width: 400px;
-        height: 290px;
-        border: 1px solid;
-        margin: 50px auto;
-    }
-
-    .formgroup {
-        margin-left: 5px;
-        margin-top: 2px;
-    }
-
-    label {
-        margin-bottom: 4px;
-    }
-
-    .checkbox {
-        margin-left: 5px;
-    }
-
-    .email {
-        border-radius: 4px;
-    }
-
-    .password {
-        border-radius: 4px;
-    }
-
-    .check1 {
-        float: left;
-    }
-
-    .check2 {
-        float: right;
-    }
-    a{
-
-    }
-</style>
-<div class="container">
-    <div class="head-title"><h2>Đăng nhập</h2></div>
-    <form>
-        <div class="formgroup">
-            <label for="inputEmail">Email</label>
-            <div>
-                <input type="email" class="email" placeholder="Email" />
-            </div>
-        </div>
-        <div class="formgroup">
-            <label for="inputPassword">Mật khẩu</label>
-            <div>
-                <input type="password" class="password" placeholder="Mật khẩu" />
-            </div>
-        </div>
-        <div class="formgroup">
-            <label for="inputPassword">Xác nhận mật khẩu</label>
-            <div>
-                <input type="password" class="password" placeholder="Xác nhận mật khẩu" />
-            </div>
-        </div>
-        <div class="formgroup">
-            <div class="checkbox">
-                <label><input type="checkbox" />Remember me</label>
-            </div>
-        </div>
-        <div class="submit">
-            <a href="~/Home/LogIn" class="btn btn-primary">Đăng ký</a>
-        </div>
-    </form>
-</div>
-
-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap"
+          rel="stylesheet" />
+    <link rel="stylesheet"
+          href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <title>Signup</title>
+    <link href="~/Content/stylesheet.css" rel="stylesheet"/>
+    <link href="~/Content/stylesheet.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="signup">
+        <h1 class="signup-heading">Sign up</h1>
+        <button class="signup-social">
+            <i class="fa fa-google signup-social-icon"></i>
+            <span class="signup-social-text">Sign up with Google</span>
+        </button>
+        <div class="signup-or"><span>Or</span></div>
+        <form action="#" class="signup-form" autocomplete="off">
+            <label for="fullname" class="signup-label">Full name</label>
+            <input type="text" id="fullname" class="signup-input" placeholder="Eg: Nguyễn Thiện Nhân">
+            <label for="email" class="signup-label">Email</label>
+            <input type="email" id="email" class="signup-input" placeholder="Eg: nhan1905@gmai.com">
+            <label for="password" class="signup-label">Password</label>
+            <input type="password" id="password" class="signup-input">
+            <label for="password" class="signup-label">Confirm the password</label>
+            <input type="password" id="password" class="signup-input">
+            <button class="signup-submit">Sign up</button>
+        </form>
+        <p class="signup-already">
+            <span>Already have an account ?</span>
+            <a href="~/Home/LogIn" class="signup-login-link">Login</a>
+        </p>
+        
+    </div>
+</body>
+</html>
