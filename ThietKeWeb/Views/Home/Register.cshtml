@@ -1,4 +1,3 @@
-﻿
 @{
     ViewBag.Title = "Register";
     Layout = "~/Views/Shared/MasterLayout.cshtml";
@@ -14,6 +13,7 @@
     <link rel="stylesheet"
           href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
     <title>Signup</title>
+    <link href="~/Content/stylesheet.css" rel="stylesheet"/>
     <link href="~/Content/stylesheet.css" rel="stylesheet" />
 </head>
 <body>
@@ -26,9 +26,9 @@
         <div class="signup-or"><span>Or</span></div>
         <form action="#" class="signup-form" autocomplete="off">
             <label for="fullname" class="signup-label">Full name</label>
-            <input type="text" id="fullname" class="signup-input" placeholder="Eg: Nguyễn Thiện Nhân">
+            <input type="text" id="fullname" class="signup-input" placeholder="Eg: Nguyễn Văn A">
             <label for="email" class="signup-label">Email</label>
-            <input type="email" id="email" class="signup-input" placeholder="Eg: nhan1905@gmai.com">
+            <input type="email" id="email" class="signup-input" placeholder="Eg: NguyenVanA@gmail.com">
             <label for="password" class="signup-label">Password</label>
             <input type="password" id="password" class="signup-input">
             <label for="password" class="signup-label">Confirm the password</label>
@@ -39,7 +39,7 @@
             <span>Already have an account ?</span>
             <a href="~/Home/LogIn" class="signup-login-link">Login</a>
         </p>
-
+        
     </div>
 </body>
 </html>

@@ -1,4 +1,4 @@
-﻿
+
 @{
     ViewBag.Title = "Login";
     Layout = "~/Views/Shared/MasterLayout.cshtml";
@@ -8,34 +8,24 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap"
-          rel="stylesheet" />
-    <link rel="stylesheet"
-          href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
     <title>Signup</title>
     <link href="~/Content/stylesheet1.css" rel="stylesheet" />
 </head>
 <body>
     <div class="login">
         <h1 class="login-heading">Login</h1>
-        <button class="login-social">
-            <i class="fa fa-google login-social-icon"></i>
-            <span class="login-social-text">Login with Google</span>
-        </button>
-        <div class="login-or"><span>Or</span></div>
-        <form action="#" class="login-form" autocomplete="off">
             <label for="email" class="login-label">Email</label>
-            <input type="email" id="email" class="login-input" placeholder="Eg: nhan1905@gmai.com">
+            <input type="email" id="email" class="login-input">
             <label for="password" class="login-label">Password</label>
             <input type="password" id="password" class="login-input">
             <button class="login-submit">Login</button>
         </form>
         <p class="login-already">
-            <a href="" class="login-already">Forgot password?</a>
+            <a href="" >Forgot password?</a>
             <a href="~/Home/Register" class="login-login-link">Sign up</a>
         </p>
     </div>
 </body>
 </html>
+
 
