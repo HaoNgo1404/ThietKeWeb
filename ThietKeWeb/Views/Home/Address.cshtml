@@ -1,8 +1,104 @@
-﻿
-@{
+﻿@{
     ViewBag.Title = "Address";
     Layout = "~/Views/Shared/MasterLayout.cshtml";
 }
 
-<link href="~/Views/Shared/MasterLayout.cshtml" rel="stylesheet" type="text/css"/>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Baron Drinks</title>
+    <style>
+        table {
+            width: 100%;            
+            border-collapse: collapse;
+        }
 
+        table, th, td {
+            border: 1px solid black;
+        }
+
+        th, td {
+            height: 100px;
+            padding: 8px;
+            text-align: center;
+        }
+
+        th {
+            background-color: #3c763d;
+            color: white;
+        }
+
+        td {
+            background-color: #f9f9f9;
+        }
+
+        caption {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <table>
+        <caption>Hệ Thống Cửa Hàng Baron Drinks</caption>
+        <thead>
+            <tr>
+                <th>QUẬN/HUYỆN</th>
+                <th>TÊN CỬA HÀNG</th>
+                <th>ĐỊA CHỈ</th>
+                <th>SỐ ĐIỆN THOẠI</th>
+                <th>THỜI GIAN HOẠT ĐỘNG</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Sunset</td>
+                <td>Baron</td>
+                <td>abc xyz QUẬN6, TPHCM</td>
+                <td>911 hoặc 113</td>
+                <td>Không bao giờ mở cửa, không thích bán</td>
+            </tr>
+            <tr>
+                <td>Lotus</td>
+                <td>Rồng lửa</td>
+                <td>abc xyz QUẬN 5, TPHCM</td>
+                <td>123 hoặc 456</td>
+                <td>Không bao giờ mở cửa, không thích bán</td>
+            </tr>
+            <tr>
+                <td>Pearl</td>
+                <td>Rồng băng</td>
+                <td>abc xyz QUẬN 4, TPHCM</td>
+                <td>789 hoặc 111213</td>
+                <td>Không bao giờ mở cửa, không thích bán</td>
+            </tr>
+            <tr>
+                <td>Fracture</td>
+                <td>Rồng đất</td>
+                <td>abc xyz QUẬN 3, TPHCM</td>
+                <td>Không mua điện thoại</td>
+                <td>Không bao giờ mở cửa, không thích bán</td>
+            </tr>
+            <tr>
+                <td>Fracture</td>
+                <td>Rồng hóa kỹ</td>
+                <td>abc xyz QUẬN 2, TPHCM</td>
+                <td>Không mua điện thoại</td>
+                <td>Không bao giờ mở cửa, không thích bán</td>
+            </tr>
+            <tr>
+                <td>Fracture</td>
+                <td>Rồng ngàn tuổi</td>
+                <td>abc xyz QUẬN 1, TPHCM</td>
+                <td>Không mua điện thoại</td>
+                <td>Không bao giờ mở cửa, không thích bán</td>
+            </tr>
+        </tbody>
+    </table>
+
+</body>
+</html>
