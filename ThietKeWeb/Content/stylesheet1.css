@@ -61,7 +61,8 @@ body {
     font-size: 20px;
     color: #999;
 }
-.login-login-link {
+.login-signup-link {
     color: #2979ff;
+    font-size: 20px;
     text-decoration: none;
 }

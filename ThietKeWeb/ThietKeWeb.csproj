@@ -154,9 +154,13 @@
     <Content Include="Content\images\banner9.png" />
     <Content Include="Content\images\BestSeller.jpg" />
     <Content Include="Content\images\Character-icon.png" />
+    <Content Include="Content\images\email-icon.png" />
     <Content Include="Content\images\fa1311596bc3cd9d94d27.jpg" />
+    <Content Include="Content\images\fb-icon.png" />
     <Content Include="Content\images\Heart-icon.png" />
+    <Content Include="Content\images\ins-icon.png" />
     <Content Include="Content\images\logo1.png" />
+    <Content Include="Content\images\phone-icon.png" />
     <Content Include="Content\images\search-icon.JPG" />
     <Content Include="Content\images\Shopping-cart-icon.png" />
     <Content Include="Content\images\sp1.png" />
@@ -179,6 +183,7 @@
     <Content Include="Content\images\sp7.png" />
     <Content Include="Content\images\sp8.png" />
     <Content Include="Content\images\sp9.png" />
+    <Content Include="Content\images\tw-icon.png" />
     <Content Include="Content\stylesheet.css" />
     <Content Include="Content\stylesheet1.css" />
     <Content Include="favicon.ico" />
