@@ -10,15 +10,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Login</title>
     <link href="~/Content/stylesheet1.css" rel="stylesheet" />
+    <script src="~/Content/LogIn.js"></script>
 </head>
 <body>
     <div class="login">
         <h1 class="login-heading">Login</h1>
         <label for="email" class="login-label">Email</label>
         <input type="email" id="email" class="login-input">
+        <span id="email_error"></span>
         <label for="password" class="login-label">Password</label>
         <input type="password" id="password" class="login-input">
-        <button type="button" class="login-submit">Login</button>
+        <span id="password_error"></span>
+        <br />
+        <input type="checkbox"/> Remember Password?
+        <button type="button" onclick="return ValiDate()" class="login-submit">Login</button>
         <p class="login-forgot">
             <a href="">Forgot password?</a>
             <a href="~/Home/Register" class="login-signup-link">Sign up</a>

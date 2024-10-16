@@ -24,6 +24,10 @@ namespace ThietKeWeb.Controllers
         {
             return View();
         }
+        public ActionResult NguonGoc()
+        {
+            return View();
+        }
         public ActionResult Address()
         {
             return View();

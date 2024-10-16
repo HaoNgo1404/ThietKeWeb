@@ -3,11 +3,48 @@
     ViewBag.Title = "GioHang";
     Layout = "~/Views/Shared/MasterLayout.cshtml";
 }
-
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 <style type="text/css">
-    form{
-        border:1px solid thin;
+    body{
+        text-align:center;
+        font-weight:normal;
+    }
+    table {
+        border-collapse: collapse;
+       margin-top:50px;
+       margin-left:auto;
+       margin-right:auto;
+    }
+    button{
+        width:150px;
+        height:50px;
+        float:right;
+        margin-top:20px;
+        margin-right:250px;
+    }
+    th{
+        text-align:center;
+    }
+    img{
+        width:80px;
+        height:60px;
     }
 </style>
-<form>
-</form>
+<h2>Giỏ Hàng</h2>
+<table border="1" width="1000" height="100">
+    <tr>
+        <th>Hình Ảnh</th>
+        <th>Tên Sản Phẩm</th>
+        <th>Giá tiền</th>
+        <th>Số Lượng </th>
+        <th>Thành Tiền</th>
+    </tr>
+    <tr>
+        <td><img src="~/Content/images/sp1.png" /></td>
+        <td>Cà phê đen</td>
+        <td>20.000 VNĐ</td>
+        <td><input type="number" value="số lượng"/></td>
+        <td><input type="number" value="tiền"/></td>
+    </tr>
+</table>
+<button type="button" class="btn btn-danger">Xác nhận</button>
