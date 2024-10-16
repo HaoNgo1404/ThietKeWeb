@@ -1,5 +1,6 @@
+
 @{
-    ViewBag.Title = "Register";
+    ViewBag.Title = "register";
     Layout = "~/Views/Shared/MasterLayout.cshtml";
 }
 <!DOCTYPE html>
@@ -7,39 +8,24 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap"
-          rel="stylesheet" />
-    <link rel="stylesheet"
-          href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
     <title>Signup</title>
-    <link href="~/Content/stylesheet.css" rel="stylesheet"/>
     <link href="~/Content/stylesheet.css" rel="stylesheet" />
 </head>
 <body>
     <div class="signup">
         <h1 class="signup-heading">Sign up</h1>
-        <button class="signup-social">
-            <i class="fa fa-google signup-social-icon"></i>
-            <span class="signup-social-text">Sign up with Google</span>
-        </button>
-        <div class="signup-or"><span>Or</span></div>
-        <form action="#" class="signup-form" autocomplete="off">
-            <label for="fullname" class="signup-label">Full name</label>
-            <input type="text" id="fullname" class="signup-input" placeholder="Eg: Nguyễn Văn A">
-            <label for="email" class="signup-label">Email</label>
-            <input type="email" id="email" class="signup-input" placeholder="Eg: NguyenVanA@gmail.com">
-            <label for="password" class="signup-label">Password</label>
-            <input type="password" id="password" class="signup-input">
-            <label for="password" class="signup-label">Confirm the password</label>
-            <input type="password" id="password" class="signup-input">
-            <button class="signup-submit">Sign up</button>
-        </form>
+        <label for="fullname" class="signup-label">Full name</label>
+        <input type="text" id="text" class="signup-input">
+        <label for="email" class="signup-label">Email</label>
+        <input type="email" id="email" class="signup-input">
+        <label for="password" class="signup-label">Password</label>
+        <input type="password" id="password" class="signup-input">
+        <button class="signup-submit">Sign up</button>
         <p class="signup-already">
             <span>Already have an account ?</span>
             <a href="~/Home/LogIn" class="signup-login-link">Login</a>
         </p>
-        
     </div>
 </body>
 </html>
+
