@@ -1,0 +1,112 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Trà Sữa Truyền Thống</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <style type="text/css">
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            font-size: 20px;
+            background-color: #f0f0f0;
+            text-decoration: none;
+        }
+
+        .container {
+            width: 100%;
+            display: flex;
+            padding: 10px;
+            font-size: 30px;
+        }
+
+        .image {
+            background-color: antiquewhite;
+            margin-left: 50px;
+        }
+
+        form {
+            display: flex;
+        }
+
+        input {
+            margin-right: 15px;
+        }
+
+        .ProdInfo {
+            padding-left: 50px;
+        }
+
+        .ProdType {
+            padding-top: 20px;
+        }
+
+        .ProdPrice {
+            color: green;
+            padding-top: 10px;
+        }
+
+        a {
+            width: 500px;
+            text-align: center;
+        }
+
+        #button {
+            padding-top: 80px;
+        }
+
+        .ProdDescription {
+            clear: both;
+            padding-top: 10px;
+            padding-left: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="image">
+            <img src="~/Content/images/sp17.png" width="550" height="500" />
+        </div>
+        <div class="ProdInfo">
+            <label>Trà Sữa Truyền Thống</label>
+            <p class="ProdPrice">30.000 VND</p>
+            <p class="ProdType">Chọn size (bắt buộc)</p>
+            <form>
+                <input type="submit" class="btn btn-default" value="Nhỏ + 0 đ" />
+                <input type="submit" class="btn btn-default" value="Vừa + 10.000 đ" />
+                <input type="submit" class="btn btn-default" value="Lớn + 16.000 đ" />
+            </form>
+            <p class="ProdType">Topping</p>
+            <form>
+                <input type="submit" class="btn btn-default" value="Kem Tươi + 10.000 đ " />
+                <input type="submit" class="btn btn-default" value="Trân Châu + 10.000 đ " />
+            </form>
+            <form class="ProdType">
+                <input type="submit" class="btn btn-default" value="Thạch + 10.000 đ " />
+            </form>
+            <div id="button">
+                <a href="~/Home/Index" class="btn btn-success">Đặt mua hàng</a>
+            </div>
+        </div>
+    </div>
+    <div class="ProdDescription">
+        <label>Mô tả sản phẩm</label>
+        <p>
+            Trà sữa truyền thống là một món đồ uống nổi tiếng, đặc biệt ở các nước châu Á như Đài Loan, Hong Kong và Việt Nam. 
+            Sự kết hợp giữa trà đen thơm ngon, sữa béo ngậy và các thành phần khác tạo nên một trải nghiệm thưởng thức độc đáo và thú vị.
+        </p>
+    </div>
+
+</body>
+</html>
