@@ -1,4 +1,4 @@
-
+﻿
 @{
     ViewBag.Title = "Login";
     Layout = "~/Views/Shared/MasterLayout.cshtml";
@@ -14,19 +14,16 @@
 <body>
     <div class="login">
         <h1 class="login-heading">Login</h1>
-        <form>
-            <label for="email" class="login-label">Email</label>
-            <input type="email" id="email" class="login-input">
-            <label for="password" class="login-label">Password</label>
-            <input type="password" id="password" class="login-input">
-            <button class="login-submit">Login</button>
-        </form>
-        <p class="login-already">
-            <a href="" >Forgot password?</a>
-            <a href="~/Home/Register" class="login-login-link">Sign up</a>
+        <label for="email" class="login-label">Email</label>
+        <input type="email" id="email" class="login-input">
+        <label for="password" class="login-label">Password</label>
+        <input type="password" id="password" class="login-input">
+        <button class="login-submit">Login</button>
+        <p class="login-forgot">
+            <a href="">Forgot password?</a>
+            <a href="~/Home/Register" class="login-signup-link">Sign up</a>
         </p>
     </div>
 </body>
 </html>
-
 
