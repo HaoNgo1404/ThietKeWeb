@@ -1,4 +1,4 @@
-﻿
+
 html {
     font-size: 62.5%;
     font-family: "Poppins", sans-serif;
@@ -118,10 +118,10 @@ body {
     margin-bottom: 30px;
 }
 
-    .signup-input::-webkit-input-placeholder {
+.signup-input::-webkit-input-placeholder {
         color: #b4bac0;
         font-weight: 500;
-    }
+}
 
     .signup-input:: -moz-input-placeholder {
         color: #b4bac0;

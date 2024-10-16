@@ -13,14 +13,11 @@
 
         body {
             font-family: Arial, sans-serif;
-            font-size: 20px;
-            font-weight: bold;
             background-color: #f0f0f0;
-            text-decoration:none;
         }
 
         .header {
-            margin-top: 4px;
+            padding-top: 3px;
             width: 100%;
             background-color: #b22830;
             display: flex;
@@ -29,7 +26,7 @@
         }
 
         .logo {
-            width: 100%;
+            width: 250px;
             height: 80px;
         }
 
@@ -38,10 +35,10 @@
         }
 
         .search {
-            margin-left: 160px;
+            margin-left: 35px;
             border: 1px solid #ccc;
             border-radius: 8px;
-            width: 470px;
+            width: 450px;
             padding: 10px;
             outline: none;
         }
@@ -56,8 +53,7 @@
             width: 70px;
             height: 29px;
             border-radius: 8px;
-            padding-top: 4px;
-            background: none;
+            margin: 4px 4px 0 0;
         }
 
         .search-image {
@@ -76,7 +72,7 @@
             top: -3px;
             background-color: red;
             color: white;
-            border-radius: 45%;
+            border-radius:45%;
         }
 
         ul {
@@ -84,24 +80,22 @@
         }
 
         .menu {
-            margin-left: 8%;
+            margin-left: 35px;
         }
 
         li {
             list-style-type: none;
-        }
-        a{
-            text-decoration:none;
         }
 
         .menu a {
             color: white;
             font-size: 18px;
             text-decoration: none;
+            transition: background-color 0.3s ease, transform 0.3s ease, text-shadow 0.3s ease;
         }
 
         #selection {
-            margin-right: 35px;
+            margin-right: 25px;
             color: white;
         }
 
@@ -111,27 +105,6 @@
             margin-right: 4px;
         }
 
-        .image1 {
-            display: block;
-            width: 100%;
-            height: 50%;
-            border-radius: 2px;
-        }
-
-        .image2 {
-            display: block;
-            width: 100%;
-            height: 50%;
-            border-radius: 2px;
-        }
-
-        .ad {
-            clear: both;
-            display: flex;
-            align-items: center;
-        }
-
-
         .list-background {
             display: flex;
             width: 100%;
@@ -140,16 +113,10 @@
         .list {
             display: flex;
             align-items: center;
-            padding-top:10px;
         }
-
         .menu1 {
             color: white;
-            margin-left: 310px;
-            display:inline-block;
-            block-size:35px;
-            text-decoration:none;
-            transition: all 0.2s ease;
+            margin-left: 320px;
         }
 
             .menu1:hover {
@@ -160,24 +127,17 @@
         .menu2 {
             margin-left: 150px;
             color: white;
-            text-decoration: none;
-            display:inline-block;
-            block-size:35px;
-            transition: all 0.2s ease;
         }
 
             .menu2:hover {
                 display: block;
                 background-color: #53382C;
+
             }
 
         .menu3 {
             margin-left: 150px;
             color: white;
-            display:inline-block;
-            block-size:35px;
-            text-decoration: none;
-            transition: all 0.2s ease;
         }
 
             .menu3:hover {
@@ -195,12 +155,12 @@
             position: absolute;
             list-style-type: none;
             z-index: 1;
-            left: -416px;
+            left: -393px;
             top: 100%;
         }
 
         .dropdown-content-list {
-            width: 356px;
+            width: 312px;
             height: 200px;
             margin-top: 15px;
         }
@@ -212,15 +172,15 @@
         }
 
         .content1 {
-            margin-left: 144px;
+            margin-left: 130px;
         }
 
         .content2 {
-            margin-left: 160px;
+            margin-left: 145px;
         }
 
         .content3 {
-            margin-left: 152px;
+            margin-left: 140px;
         }
 
         .dropdown-content li a:hover {
@@ -232,9 +192,6 @@
             display: flex;
             background-color: #53382C;
         }
-        .menu2:hover .dropdown-content {
-            display:block;
-        }
 
         .dropdown-content {
             background-color: transparent;
@@ -243,7 +200,6 @@
 
         .prod-name {
             display: flow;
-            padding-top:4px;
         }
 
         .prod-name-list {
@@ -256,6 +212,7 @@
             position: relative;
             text-decoration: none;
             transition: all 0.2s ease;
+            padding-left: 10px;
         }
 
         .prod-name li a:hover {
@@ -266,7 +223,7 @@
         .prod-name li a::after {
             position: absolute;
             content: '\203A';
-            left: -50px;
+            left: -80px;
             opacity: 0;
             transition: opacity 0.3s ease;
         }
@@ -277,24 +234,18 @@
 
         #featureProd {
             text-align: center;
-        }
-
-        .prod-list {
-            width: 100%;
-            background-color: yellowgreen;
-            height: 30px;
-            margin-bottom: 20px;
+            background-color: #f0f0f0;
         }
 
         h2 {
             font-size: 20px;
-            vertical-align: middle;
         }
 
         .prod-container {
             display: flex;
-            justify-content:center;
+            justify-content: center;
             align-items: center;
+            margin-right: 20px;
         }
 
         .prod {
@@ -308,6 +259,7 @@
         }
 
             .prod-item:hover {
+                letter-spacing: 1px;
                 transform: translateY(-5px);
             }
 
@@ -318,6 +270,7 @@
         }
 
             .prod-item-special1:hover {
+                letter-spacing: 1px;
                 transform: translateY(-5px);
             }
 
@@ -328,24 +281,7 @@
         }
 
             .prod-item-special2:hover {
-                transform: translateY(-5px);
-            }
-        .prod-item-special3 {
-            width: 120px;
-            height: 150px;
-            transition: transform 0.2s ease;
-        }
-
-            .prod-item-special3:hover {
-                transform: translateY(-5px);
-            }
-        .prod-item-special4 {
-            width: 180px;
-            height: 150px;
-            transition: transform 0.2s ease;
-        }
-
-            .prod-item-special4:hover {
+                letter-spacing: 1px;
                 transform: translateY(-5px);
             }
 
@@ -367,7 +303,7 @@
 
         #footer {
             margin-top: 15px;
-            background-color: #5e311e;
+            background-color: orangered;
             color: white;
             font-size: 18px;
             clear: both;

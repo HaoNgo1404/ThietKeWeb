@@ -52,9 +52,5 @@ namespace ThietKeWeb.Controllers
         {
             return View();
         }
-        public ActionResult CaPheDen()
-        {
-            return View();
-        }
     }
 }

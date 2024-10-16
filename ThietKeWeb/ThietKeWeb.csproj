@@ -121,7 +121,6 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Controllers\ProDuctDetailController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -177,8 +176,6 @@
     <Content Include="Content\images\sp7.png" />
     <Content Include="Content\images\sp8.png" />
     <Content Include="Content\images\sp9.png" />
-    <Content Include="Content\stylesheet.css" />
-    <Content Include="Content\stylesheet1.css" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
@@ -216,32 +213,14 @@
     <Content Include="Views\Home\Recruit.cshtml" />
     <Content Include="Views\Home\Address.cshtml" />
     <Content Include="Views\Home\GioHang.cshtml" />
+    <Content Include="Views\Home\ProductList.cshtml" />
+    <Content Include="Views\Home\ProductCategory.cshtml" />
     <Content Include="Views\Home\ThanhToan.cshtml" />
     <Content Include="Views\Home\CheckProduct.cshtml" />
     <Content Include="Views\Home\Register.cshtml" />
     <Content Include="Views\Home\LogIn.cshtml" />
     <Content Include="Views\Home\History.cshtml" />
     <Content Include="Views\Home\Favourite.cshtml" />
-    <Content Include="Views\ProDuctDetail\CaPheDen.cshtml" />
-    <Content Include="Views\ProDuctDetail\Matcha.cshtml" />
-    <Content Include="Views\ProDuctDetail\BacSiu.cshtml" />
-    <Content Include="Views\ProDuctDetail\ChanhTacMatOng.cshtml" />
-    <Content Include="Views\ProDuctDetail\TraDau.cshtml" />
-    <Content Include="Views\ProDuctDetail\SodaChanh.cshtml" />
-    <Content Include="Views\ProDuctDetail\CapheCaramel.cshtml" />
-    <Content Include="Views\ProDuctDetail\TraThachDau.cshtml" />
-    <Content Include="Views\ProDuctDetail\TraNho.cshtml" />
-    <Content Include="Views\ProDuctDetail\OreoDaXay.cshtml" />
-    <Content Include="Views\ProDuctDetail\MiloDaXay.cshtml" />
-    <Content Include="Views\ProDuctDetail\SocolaDaXay.cshtml" />
-    <Content Include="Views\ProDuctDetail\CaramelDaXay.cshtml" />
-    <Content Include="Views\ProDuctDetail\DauDaXay.cshtml" />
-    <Content Include="Views\ProDuctDetail\MatchaSocolaDaXay.cshtml" />
-    <Content Include="Views\ProDuctDetail\SuaTuoiTranChauDuongNau.cshtml" />
-    <Content Include="Views\ProDuctDetail\TraSuaTruyenThong.cshtml" />
-    <Content Include="Views\ProDuctDetail\TraVai.cshtml" />
-    <Content Include="Views\ProDuctDetail\TraSuaTranChauTrang.cshtml" />
-    <Content Include="Views\ProDuctDetail\TraDen.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
