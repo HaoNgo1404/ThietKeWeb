@@ -8,6 +8,18 @@ namespace ThietKeWeb.Controllers
 {
     public class HomeController : Controller
     {
+         public ActionResult NguonGoc()
+         {
+             return View();
+         }
+         public ActionResult DichVu()
+         {
+             return View();
+         }
+         public ActionResult NgheNghiep()
+         {
+             return View();
+         }
         public ActionResult Index()
         {
             return View();
@@ -25,14 +37,6 @@ namespace ThietKeWeb.Controllers
             return View();
         }
         public ActionResult NguonGoc()
-        {
-            return View();
-        }
-        public ActionResult DichVu()
-        {
-            return View();
-        }
-        public ActionResult NgheNghiep()
         {
             return View();
         }
