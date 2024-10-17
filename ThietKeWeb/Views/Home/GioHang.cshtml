@@ -5,46 +5,156 @@
 }
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 <style type="text/css">
-    body{
-        text-align:center;
-        font-weight:normal;
+    body {
+        text-align: center;
+        font-weight: normal;
     }
+    .no-border {
+        border: none; 
+        background: transparent; 
+        text-align: center; 
+        width: 100px; 
+    }
+
+
     table {
         border-collapse: collapse;
-       margin-top:50px;
-       margin-left:auto;
-       margin-right:auto;
+        margin-top: 50px;
+        margin-left: auto;
+        margin-right: auto;
     }
-    button{
-        width:150px;
-        height:50px;
-        float:right;
-        margin-top:20px;
-        margin-right:250px;
+
+    button {
+        width: 150px;
+        height: 50px;
+        float: right;
+        margin-top: 20px;
+        margin-right: 250px;
     }
-    th{
-        text-align:center;
+
+    th {
+        text-align: center;
     }
-    img{
-        width:80px;
-        height:60px;
+
+    img {
+        width: 80px;
+        height: 60px;
     }
 </style>
+<script language="Javascript">
+    function CalculateTotal() {
+        // Lấy giá trị từ các ô nhập liệu
+        var dg = parseFloat(document.getElementById("iPrice").value); // Ép kiểu giá trị đơn giá thành số
+        var sl = parseFloat(document.getElementById("iQuantity").value);
+        var lbTotal = document.getElementById("lbTotal");
+
+        // Kiểm tra nếu đơn giá hoặc số lượng chưa nhập hoặc không hợp lệ
+        if (isNaN(dg) || dg <= 0) {
+            alert("Đơn giá phải lớn hơn 0");
+            return;
+        }
+        if (isNaN(sl) || sl <= 0 || sl > 15) {
+            alert("Số lượng phải trong khoảng 1 - 15");
+            return;
+        }
+
+        // Tính toán thành tiền và cập nhật kết quả
+        lbTotal.innerText = dg * sl;
+    }
+
+    function selectProduct(obj) {
+        var errMsg = document.getElementById("err_msg");
+        var value = obj.value;
+        if (value == '') {
+            errMsg.innerHTML = "Hãy chọn sản phẩm";
+        } else {
+            errMsg.innerHTML = ""; // Xóa thông báo lỗi nếu đã chọn sản phẩm
+        }
+    }
+</script>
+
 <h2>Giỏ Hàng</h2>
 <table border="1" width="1000" height="100">
     <tr>
         <th>Hình Ảnh</th>
         <th>Tên Sản Phẩm</th>
         <th>Giá tiền</th>
-        <th>Số Lượng </th>
+        <th>Số Lượng</th>
         <th>Thành Tiền</th>
     </tr>
     <tr>
         <td><img src="~/Content/images/sp1.png" /></td>
         <td>Cà phê đen</td>
-        <td>20.000 VNĐ</td>
-        <td><input type="number" value="số lượng"/></td>
-        <td><input type="number" value="tiền"/></td>
+        <td>
+            <input type="text" id="iPrice" name="Price" value="20000" readonly class="no-border"/>
+        </td>
+        <td>
+            <input type="number" id="iQuantity" name="Quantity" value="1" min="1" max="15"
+                   oninput="CalculateTotal();" />
+        </td>
+        <td>
+            <label id="lbTotal"></label>
+        </td>
     </tr>
 </table>
 <button type="button" class="btn btn-danger">Xác nhận</button>
+
+
+
+
+@*<html>
+    <head>
+        <title>TÍNH TIỀN</title>
+        <meta http-equiv="content-type" content="text/html" charset="utf-8" />
+        <script language="Javascript">
+        function CalculateTotal() {
+            // Lấy giá trị từ các ô nhập liệu
+            var dg = parseFloat(document.getElementById("iPrice").value);
+            var sl = parseFloat(document.getElementById("iQuantity").value);
+            var lbTotal = document.getElementById("lbTotal");
+
+            // Kiểm tra nếu đơn giá hoặc số lượng chưa nhập hoặc không hợp lệ
+            if (isNaN(dg) || dg < 1) {
+                alert("Đơn giá phải lớn hơn 0");
+                return;
+            }
+            if (isNaN(sl) || sl <= 0 || sl > 15) {
+                alert("Số lượng phải trong khoảng 1 - 15");
+                return;
+            }
+
+            // Tính toán thành tiền và cập nhật kết quả
+            lbTotal.innerText = dg * sl;
+        }
+
+        function selectProduct(obj) {
+            var errMsg = document.getElementById("err_msg");
+            var value = obj.value;
+            if (value == '') {
+                errMsg.innerHTML = "Hãy chọn sản phẩm";
+            } else {
+                errMsg.innerHTML = ""; // Xóa thông báo lỗi nếu đã chọn sản phẩm
+            }
+        }
+    </script>
+    </head>
+    <body>
+        <h1>NHẬP SỐ LƯỢNG VÀ ĐƠN GIÁ</h1>
+        <form method="post">
+
+            <p style="color:red" id="err_msg"></p>
+
+            Đơn giá: <input type="number" id="iPrice" name="Price" value="20000"
+                            oninput="CalculateTotal();" />
+            <br />
+
+            Số lượng: <input type="number" id="iQuantity" name="Quantity" value="1"
+                             min="1" max="15"
+                             oninput="CalculateTotal();" />
+            <br />
+
+            Thành tiền: <label id="lbTotal"></label>
+    <br />
+        </form>
+    </body>
+    </html>*@
