@@ -231,6 +231,39 @@
             background-color: transparent;
             transition: all 0.6s ease;
         }
+        .dropdown-content-1 {
+            display: none;
+            position: absolute;
+            list-style-type: none;
+            z-index: 1;
+            left: -910px;
+            top: 100%;
+            width: 100vw;
+        }
+        .dropdown-content-1 a {
+            text-decoration: none;
+            transition: all 0.2s ease;
+            color: #ffcc00;
+        }
+
+        .dropdown-content-1 li a:hover {
+            letter-spacing: 2px;
+            background-color: inherit;
+        }
+
+        .dropdown-btn:hover .dropdown-content-1 {
+            display: flex;
+            background-color: #53382C;
+        }
+
+        .menu2:hover .dropdown-content-1 {
+            display: block;
+        }
+
+        .dropdown-content-1 {
+            background-color: transparent;
+            transition: all 0.6s ease;
+        }
 
         .prod-name {
             display: flow;

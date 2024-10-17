@@ -28,6 +28,14 @@ namespace ThietKeWeb.Controllers
         {
             return View();
         }
+        public ActionResult DichVu()
+        {
+            return View();
+        }
+        public ActionResult NgheNghiep()
+        {
+            return View();
+        }
         public ActionResult Address()
         {
             return View();
