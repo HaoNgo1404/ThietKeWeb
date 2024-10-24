@@ -1,0 +1,33 @@
+﻿@model IEnumerable<ThietKeWeb.Models.Category>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/AdminLayout.cshtml";
+}
+
+
+<p>
+    @Html.ActionLink("Thêm danh mục mới", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.CategoryName)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.CategoryName)
+        </td>
+        <td>
+            @Html.ActionLink("Sửa", "Edit", new { id=item.CategoryID }) |
+            @Html.ActionLink("Chi tiết", "Details", new { id=item.CategoryID }) |
+            @Html.ActionLink("Xóa", "Delete", new { id=item.CategoryID })
+        </td>
+    </tr>
+}
+
+</table>

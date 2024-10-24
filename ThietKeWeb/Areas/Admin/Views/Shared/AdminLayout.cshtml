@@ -3,6 +3,8 @@
 <head>
     <meta name="viewport" content="width=device-width" />
     <title>@ViewBag.Title</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
     <style type="text/css">
         * {
             margin: 0;
@@ -21,8 +23,7 @@
         .header {
             margin-top: 4px;
             width: 100%;
-            background-color: #b22830;
-            display: flex;
+            background-color: gray;
             flex-wrap: wrap;
             align-items: center;
         }
@@ -35,16 +36,16 @@
         .head-middle {
             position: relative;
         }
-
+        input{
+            max-width:470px;
+        }
         .search {
             margin-left: 5vw;
-            border: 1px solid #ccc;
             border-radius: 8px;
-            width: 470px;
-            padding: 10px;
+            width:450px;
+            padding: 8px;
             outline: none;
         }
-
         .search-button {
             position: absolute;
             right: 0;
@@ -64,7 +65,6 @@
             height: 29px;
             border-radius: 8px;
         }
-
         .cart {
             position: relative;
         }
@@ -83,7 +83,7 @@
         }
 
         .menu {
-            margin-left: 3vw;
+            margin-left: 2vw;
         }
 
         li {
@@ -99,7 +99,6 @@
             font-size: 18px;
             text-decoration: none;
         }
-
         #selection {
             margin-right: 35px;
             color: white;
@@ -130,30 +129,29 @@
             display: flex;
             align-items: center;
         }
-
-
         .list-background {
-            display: flex;
+
             width: 100%;
+            height:40px;
         }
 
         .list {
             display: flex;
             align-items: center;
-            padding-top: 10px;
         }
 
         .menu1 {
             color: white;
-            margin-left:10vw;
+            margin-left: 10vw;
             display: inline-block;
-            block-size: 35px;
+            block-size: 40px;
             text-decoration: none;
             transition: all 0.2s ease;
         }
 
             .menu1:hover {
                 display: block;
+                color:white;
                 background-color: #53382C;
             }
 
@@ -162,12 +160,13 @@
             color: white;
             text-decoration: none;
             display: inline-block;
-            block-size: 35px;
+            block-size: 40px;
             transition: all 0.2s ease;
         }
 
             .menu2:hover {
                 display: block;
+                color: white;
                 background-color: #53382C;
             }
 
@@ -175,13 +174,14 @@
             margin-left: 150px;
             color: white;
             display: inline-block;
-            block-size: 35px;
+            block-size: 40px;
             text-decoration: none;
             transition: all 0.2s ease;
         }
 
             .menu3:hover {
                 display: block;
+                color: white;
                 background-color: #53382C;
             }
 
@@ -195,23 +195,26 @@
             position: absolute;
             list-style-type: none;
             z-index: 1;
-            left: -18.75vw;
+            left: -19.95vw;
             top: 100%;
             width: 100vw;
         }
 
         .dropdown-content-list {
-            width:100vw;
-            height: 200px;
+            width: 100vw;
+            height: 250px;
             text-align: center;
             margin-top: 15px;
-            white-space:nowrap;
+            white-space: nowrap;
         }
 
         .dropdown-content a {
             text-decoration: none;
             transition: all 0.2s ease;
             color: #ffcc00;
+        }
+        .content {
+            margin-left:30px;
         }
 
         .dropdown-content li a:hover {
@@ -237,7 +240,7 @@
             position: absolute;
             list-style-type: none;
             z-index: 1;
-            left: -58.35vw;
+            left: -59.5vw;
             top: 100%;
             width: 100vw;
         }
@@ -273,7 +276,6 @@
         }
 
         .prod-name-list {
-            text-align: center;
             text-decoration: none;
         }
 
@@ -320,14 +322,15 @@
         .prod-container {
             display: flex;
             justify-content: center;
-            align-items: center; 
-            overflow:auto;
+            align-items: center;
+            overflow: auto;
         }
+
         .prod-container-2 {
             display: flex;
             align-items: center;
             overflow: auto;
-            white-space:nowrap;
+            white-space: nowrap;
         }
 
         .prod {
@@ -393,17 +396,17 @@
             font-size: 14px;
             color: black;
             font: Arial;
-            width:100%;
+            width: 100%;
         }
 
         .prod-price {
             font-size: 12px;
             color: green;
-            margin-left:30px;
+            margin-left: 30px;
         }
 
         #footer {
-            background-color: #5e311e;
+            background-color: gray;
             color: white;
             font-size: 18px;
             clear: both;
@@ -454,10 +457,10 @@
     </style>
 </head>
 <body>
-    <header class="header">
+    <header class="header d-flex">
         <a href="~/Home/Index"><img src="~/Content/images/logo1.png" class="logo" /></a>
         <div class="head-middle">
-            <input type="text" class="search" placeholder="Mời nhập nước uống bạn muốn" />
+            <input type="text" class="form-control search" placeholder="Mời nhập nước uống bạn muốn" />
             <button type="button" class="search-button">
                 <img src="~/Content/images/search-icon.JPG" class="search-image" />
             </button>
@@ -474,7 +477,7 @@
                     <a href="~/Home/ProDuctDetail" class="menu2">Thực đơn</a>
                     <ul class="dropdown-content">
                         <li class="dropdown-content-list">
-                            <a href="" class="content1">Cà phê</a>
+                            <a href="" class="content">Cà phê</a>
                             <ul class="prod-name">
                                 <li class="prod-name-list"><a href="~/ProDuctDetail/CaPheDen">Cà phê đen</a></li>
                                 <li class="prod-name-list"><a href="~/ProDuctDetail/BacSiu">Bạc Sỉu</a></li>
@@ -482,7 +485,7 @@
                             </ul>
                         </li>
                         <li class="dropdown-content-list">
-                            <a href="" class="content2">Trà</a>
+                            <a href="" class="content">Trà</a>
                             <ul class="prod-name">
                                 <li class="prod-name-list"><a href="~/ProDuctDetail/TraDau">Trà Dâu</a></li>
                                 <li class="prod-name-list"><a href="~/ProDuctDetail/TraThachDau">Trà Thạch Dâu</a></li>
@@ -492,7 +495,7 @@
                             </ul>
                         </li>
                         <li class="dropdown-content-list">
-                            <a href="" class="content1">Đá Xay</a>
+                            <a href="" class="content">Đá Xay</a>
                             <ul class="prod-name">
                                 <li class="prod-name-list"><a href="~/ProDuctDetail/OreoDaXay">Oreo Đá Xay</a></li>
                                 <li class="prod-name-list"><a href="~/ProDuctDetail/MiloDaXay">Milo Đá Xay</a></li>
@@ -503,7 +506,7 @@
                             </ul>
                         </li>
                         <li class="dropdown-content-list">
-                            <a href="" class="content3">Khác</a>
+                            <a href="" class="content">Khác</a>
                             <ul class="prod-name">
                                 <li class="prod-name-list"><a href="~/ProDuctDetail/Matcha">Matcha</a></li>
                                 <li class="prod-name-list"><a href="~/ProDuctDetail/ChanhTacMatOng">Chanh Tắc Mật Ong</a></li>
@@ -534,6 +537,7 @@
             </ul>
         </div>
     </header>
+   
     <div>
         @RenderBody()
     </div>
@@ -559,5 +563,8 @@
             <p>customerservice@Baroncoffee.com.vn</p>
         </div>
     </footer>
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
 </body>
 </html>

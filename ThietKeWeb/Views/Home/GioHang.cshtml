@@ -1,50 +1,112 @@
-﻿
-@{
+﻿@{
     ViewBag.Title = "GioHang";
     Layout = "~/Views/Shared/MasterLayout.cshtml";
 }
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 <style type="text/css">
-    body{
-        text-align:center;
-        font-weight:normal;
+    body {
+        text-align: center;
+        font-weight: normal;
     }
+
+    .no-border {
+        border: none;
+        background: transparent;
+        text-align: center;
+        width: 100px;
+    }
+
     table {
         border-collapse: collapse;
-       margin-top:50px;
-       margin-left:auto;
-       margin-right:auto;
+        margin-top: 50px;
+        margin-left: auto;
+        margin-right: auto;
     }
-    button{
-        width:150px;
-        height:50px;
-        float:right;
-        margin-top:20px;
-        margin-right:250px;
+
+    button {
+        width: 150px;
+        height: 50px;
+        float: right;
+        margin-top: 20px;
+        margin-right: 250px;
     }
-    th{
-        text-align:center;
+
+    th {
+        text-align: center;
     }
-    img{
-        width:80px;
-        height:60px;
+
+    img {
+        width: 80px;
+        height: 60px;
     }
 </style>
+<script language="Javascript">
+    function CalculateTotal(rowId) {
+        var price = parseFloat(document.getElementById("iPrice" + rowId).value);
+        var quantity = parseFloat(document.getElementById("iQuantity" + rowId).value);
+        var totalLabel = document.getElementById("lbTotal" + rowId);
+
+        if (isNaN(price) || price <= 0) {
+            alert("Đơn giá phải lớn hơn 0");
+            return;
+        }
+        if (isNaN(quantity) || quantity <= 0 || quantity > 15) {
+            alert("Số lượng phải trong khoảng 1 - 15");
+            return;
+        }
+
+        totalLabel.innerText = price * quantity;
+    }
+</script>
+
 <h2>Giỏ Hàng</h2>
+
 <table border="1" width="1000" height="100">
     <tr>
         <th>Hình Ảnh</th>
         <th>Tên Sản Phẩm</th>
         <th>Giá tiền</th>
-        <th>Số Lượng </th>
+        <th>Số Lượng</th>
         <th>Thành Tiền</th>
     </tr>
     <tr>
         <td><img src="~/Content/images/sp1.png" /></td>
         <td>Cà phê đen</td>
-        <td>20.000 VNĐ</td>
-        <td><input type="number" value="số lượng"/></td>
-        <td><input type="number" value="tiền"/></td>
+        <td>
+            <input type="text" id="iPrice1" name="Price" value="20000" readonly class="no-border" />
+        </td>
+        <td>
+            <input type="number" id="iQuantity1" name="Quantity" value="1" min="1" max="15"
+                   oninput="CalculateTotal(1);" />
+        </td>
+        <td>
+            <label id="lbTotal1"></label>
+        </td>
     </tr>
 </table>
+
+<table border="1" width="1000" height="100">
+    <tr>
+        <th>Hình Ảnh</th>
+        <th>Tên Sản Phẩm</th>
+        <th>Giá tiền</th>
+        <th>Số Lượng</th>
+        <th>Thành Tiền</th>
+    </tr>
+    <tr>
+        <td><img src="~/Content/images/sp2.png" /></td>
+        <td>Matcha</td>
+        <td>
+            <input type="text" id="iPrice2" name="Price" value="25000" readonly class="no-border" />
+        </td>
+        <td>
+            <input type="number" id="iQuantity2" name="Quantity" value="1" min="1" max="15"
+                   oninput="CalculateTotal(2);" />
+        </td>
+        <td>
+            <label id="lbTotal2"></label>
+        </td>
+    </tr>
+</table>
+
 <button type="button" class="btn btn-danger">Xác nhận</button>

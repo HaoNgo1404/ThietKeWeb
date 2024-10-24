@@ -1,0 +1,23 @@
+﻿@model ThietKeWeb.Models.Product
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Areas/Admin/Views/Shared/AdminLayout.cshtml";
+}
+
+<h1>XÓA SẢN PHẨM</h1>
+
+<h3>Bạn có chắc muốn xóa sản phẩm này?</h3>
+<div>
+    <hr />
+    @Html.Partial("PVProdInfo", Model)
+</div>
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-actions no-color">
+        <input type="submit" value="Xóa" class="btn btn-primary" /> |
+        @Html.ActionLink("Quay lại danh sách", "Index")
+    </div>
+}

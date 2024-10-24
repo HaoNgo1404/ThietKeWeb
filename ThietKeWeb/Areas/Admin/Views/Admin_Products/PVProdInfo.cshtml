@@ -1,0 +1,43 @@
+﻿@model ThietKeWeb.Models.Product
+    <dl class="dl-horizontal">
+        <dt>
+            Tên sản phẩm
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ProductName)
+        </dd>
+
+        <dt>
+            Mô tả
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ProductDescription)
+        </dd>
+
+        <dt>
+            Đơn giá
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ProductPrice)
+        </dd>
+
+        <dt>
+            Hình ảnh
+        </dt>
+
+        <dd>
+            <img src="~/Content/images/@Html.DisplayFor(model => model.ProductImage)" width="150" height="150"/>
+        </dd>
+
+        <dt>
+            Danh mục
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Category.CategoryName)
+        </dd>
+
+    </dl>

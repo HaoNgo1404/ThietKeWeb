@@ -1,0 +1,17 @@
+﻿@model ThietKeWeb.Models.Product
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Areas/Admin/Views/Shared/AdminLayout.cshtml";
+}
+
+<h2>CHI TIẾT SẢN PHẨM</h2>
+
+<div>
+    <hr />
+    @Html.Partial("PVProdInfo", Model)
+</div>
+<p>
+    @Html.ActionLink("Sửa", "Edit", new { id = Model.ProductID }, new {@class = "btn btn-primary"}) |
+    @Html.ActionLink("Quay lại danh sách", "Index")
+</p>
