@@ -1,15 +1,23 @@
-﻿﻿
-@{
+﻿@{
     Layout = null;
 }
-
 <!DOCTYPE html>
-
 <html>
 <head>
     <meta name="viewport" content="width=device-width" />
     <title>Bạc Sỉu</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script language="JavaScript" type="text/javascript">
+        function selectOption(clickedButton) {
+
+            var group = clickedButton.getAttribute('data-group');
+            var buttons = document.querySelectorAll(`button[data-group="${group}"]`);
+            for (var i = 0; i < buttons.length; i++) {
+                buttons[i].classList.remove('selected');
+            }
+            clickedButton.classList.add('selected');
+        }
+    </script>
     <style type="text/css">
         * {
             margin: 0;
@@ -73,40 +81,40 @@
         }
     </style>
 </head>
-<body>
-    <div class="container">
-        <div class="image">
-            <img src="~/Content/images/sp3.png" width="550" height="500" />
-        </div>
-        <div class="ProdInfo">
-            <label>Bạc Sỉu</label>
-            <p class="ProdPrice">20.000 VND</p>
-            <p class="ProdType">Chọn size (bắt buộc)</p>
-            <form>
-                <input type="submit" class="btn btn-default" value="Nhỏ + 0 đ" />
-                <input type="submit" class="btn btn-default" value="Vừa + 10.000 đ" />
-                <input type="submit" class="btn btn-default" value="Lớn + 16.000 đ" />
-            </form>
-            <p class="ProdType">Topping</p>
-            <form>
-                <input type="submit" class="btn btn-default" value="Sốt Caramel + 10.000 đ " />
-                <input type="submit" class="btn btn-default" value="Shot Expresso + 10.000 đ " />
-            </form>
-            <form class="ProdType">
-                <input type="submit" class="btn btn-default" value="Trân châu trắng + 10.000 đ " />
-            </form>
-            <div id="button">
-                <a href="~/Home/Index" class="btn btn-success">Đặt mua hàng</a>
-
-            </div>
-        </div>
-    </div>
-    <div class="ProdDescription">
-        <label>Mô tả sản phẩm</label>
-        <p>
-            Bạc sỉu chính là "Ly sữa trắng kèm một chút cà phê".
-            Thức uống này rất phù hợp những ai vừa muốn trải nghiệm chút vị đắng của cà phê vừa muốn thưởng thức vị ngọt béo ngậy từ sữa.
-        </p>
-    </div>
-</body>
-</html>
+                <body>
+                    <div class="container">
+                        <div class="image">
+                            <img src="~/Content/images/sp3.png" width="550" height="500" />
+                        </div>
+                        <div class="ProdInfo">
+                            <label>Bạc Sỉu</label>
+                            <p class="ProdPrice">20.000 VND</p>
+                            <p class="ProdType">Chọn size (bắt buộc)</p>
+                            <form>
+                                <input type="submit" class="btn btn-default" value="Nhỏ + 0 đ" />
+                                <input type="submit" class="btn btn-default" value="Vừa + 10.000 đ" />
+                                <input type="submit" class="btn btn-default" value="Lớn + 16.000 đ" />
+                            </form>
+                            <p class="ProdType">Topping</p>
+                            <form>
+                                <input type="submit" class="btn btn-default" value="Sốt Caramel + 10.000 đ " />
+                                <input type="submit" class="btn btn-default" value="Shot Expresso + 10.000 đ " />
+                            </form>
+                            <form class="ProdType">
+                                <input type="submit" class="btn btn-default" value="Trân châu trắng + 10.000 đ " />
+                            </form>
+                            <div id="button">
+                                <a href="~/Home/Index" class="btn btn-success">Đặt mua hàng</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="ProdDescription">
+                        <label>Mô tả sản phẩm</label>
+                        <p>
+                            Bạc sỉu chính là "Ly sữa trắng kèm một chút cà phê".
+                            Thức uống này rất phù hợp những ai vừa muốn trải nghiệm chút vị đắng của cà phê vừa muốn thưởng thức vị ngọt béo ngậy từ sữa.
+                        </p>
+                    </div>
+                </body>
+            </html>
+    
