@@ -1,30 +1,47 @@
-﻿
+
 @{
     ViewBag.Title = "DichVu";
     Layout = "~/Views/Shared/MasterLayout.cshtml";
 }
 <style type="text/css">
-    section {
-        font-size: 24px;
-        background-color: white;
+
+   
+    h1 {
+        padding: 20px;
+        text-align: center;
+        color: #36100a;
     }
 
-    h1 {
-        text-align: center;
+    #content {
+        padding: 30px 50px;
+        color: #36100a;
+    }
+
+    .left-image {
+        float: left;
+        margin-right: 30px;
+        width: 400px;
+        height: 250px;
+        margin-bottom: 30px;
     }
 </style>
 
 <section>
-    <h1>DỊCH VỤ</h1>
-    <div>
-        <p>DỊCH VỤ NÀY LÀ CỦA CHÚNG MÌNH</p>
-        <p>Chúng mình có thể làm gì để hoàn thiện Baron Coffee®?</p>
-        <p>Baron Coffee® là không gian của chúng mình nên mọi thứ ở đây đều vì sự thoải mái của chúng mình.</p>
-        <p>Đừng giữ trong lòng, hãy chia sẻ với chúng mình điều bạn mong muốn để cùng nhau giúp Baron Coffee® của chúng mình trở nên tuyệt vời hơn.</p>
-        <p>
-            Đừng ngại chia sẻ ý kiến của bạn tại:
-            Facebook: https://www.facebook.com/baroncoffeevietnam/
-        </p>
-        <p>Hoặc bạn có thể gửi email cho chúng mình đến địa chỉ: customerservice@baroncoffee.com.vn, chúng mình sẽ phản hồi trong thời gian sớm nhất có thể.</p>
+    <h1><strong>DỊCH VỤ</strong></h1>
+    <div id="content">
+        <h6>
+            <img src="~/Content/images/dichvu.png" class="left-image" />
+            <p><em>DỊCH VỤ NÀY LÀ CỦA CHÚNG MÌNH</em></p>
+            <p><small>Chúng mình có thể làm gì để hoàn thiện Baron Coffee®?</small></p>
+            <p><small>Baron Coffee® là không gian của chúng mình nên mọi thứ ở đây đều vì sự thoải mái của chúng mình.</small></p>
+            <p><small>Đừng giữ trong lòng, hãy chia sẻ với chúng mình điều bạn mong muốn để cùng nhau giúp Baron Coffee® của chúng mình trở nên tuyệt vời hơn.</small></p>
+            <p>
+                <small>
+                    Đừng ngại chia sẻ ý kiến của bạn tại:
+                    Facebook: https://www.facebook.com/baroncoffeevietnam/
+                </small>
+            </p>
+            <p><small>Hoặc bạn có thể gửi email cho chúng mình đến địa chỉ: customerservice@baroncoffee.com.vn, chúng mình sẽ phản hồi trong thời gian sớm nhất có thể.</small></p>
+        </h6>
     </div>
 </section>
