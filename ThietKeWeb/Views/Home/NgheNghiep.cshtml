@@ -2,25 +2,44 @@
     ViewBag.Title = "NgheNghiep";
     Layout = "~/Views/Shared/MasterLayout.cshtml";
 }
-<style type="text/css">
-
+<<style type="text/css">
+    section {
+        font-size: 24px;
+        background-color: white;
+    }
     h1 {
         padding: 20px;
         text-align: center;
         color: #36100a;
     }
+    #content {
+        padding: 30px 50px;
+        color: #36100a;
+        margin-left: 200px;
+    }
+    .right-image {
+        float: right;
+        margin-left: 20px;
+        width: 500px;
+        height: 300px;
+        margin-right: 200px;
+        margin-bottom: 30px;
+    }
 </style>
 <section>
-    <h1>NGHỀ NGHIỆP</h1>
-    <div>
-        <p>CHÚNG TÔI LUÔN XÂY DỰNG ĐỘI NGŨ VỮNG MẠNH VÀ BỀN CHẶT.</p>
-        <br />
-        <p>CÙNG VỚI NHIỀU VỊ TRÍ VÀ CHỨC VỤ TRONG CÔNG VIỆC</p>
-        <br />
-        <p>MỌI NGƯỜI ĐỀU BÌNH DẲNG VÀ TÔN TRỌNG LẪN NHAU</p>
-        <br />
-        <p>MÔI TRƯỜNG LÀM VIỆC THÂN THIỆN VÀ HÒA ĐỒNG.</p>
+    <h1><strong>NGHỀ NGHIỆP</strong></h1>
+    <div style="color:#8a2e14; text-align: center;"><i>"Sáng tạo từ từng giọt cà phê – Đam mê trong từng chi tiết."</i></div>
+    <div id="content">
+        <h6>
+            <img src="~/Content/images/nghenghiep (1).jpg" class="right-image" />
+            <p><em>"Tự hào là người mang hương vị cà phê đến cuộc sống."</em></p>
+            <p><small>Chúng tôi luôn xây dựng đội ngũ vững mạnh và bền vững.</small></p>
+            <p><small>Cùng với nhiều vị trí và trách nhiệm trong từng công việc</small></p>
+            <p><small>Môi trường làm việc hòa đồng, thân thiện.</small></p>
+            <p><small>Mọi người đều bình đẳng và tôn trọng lẫn nhau.</small></p>
+        </h6>
     </div>
 </section>
+
 
 
