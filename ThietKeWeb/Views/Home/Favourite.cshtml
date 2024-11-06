@@ -4,5 +4,62 @@
     Layout = "~/Views/Shared/MasterLayout.cshtml";
 }
 
-<h2>Favourite</h2>
+<style>
+    .favourite {
+        background-color:white;
+    }
+    h2 {
+        color:darkred;
+    }
+    .prod-container-2 {
+        justify-content:space-around;
+    }
+    .prod {
+        display:block;
+        border: hidden;
+        margin-left:20px;
+        text-align:center;
+    }
+</style>
+<div class="favourite">
+    <h2>CÁC SẢN PHẨM YÊU THÍCH CỦA BẠN</h2>
+    <div class="prod-container-2">
+        <div class="prod">
+            <a href="~/ProDuctDetail/CaPheDen">
+                <img src="~/Content/images/sp1.png" class="prod-item-special2" />
+                <h3>Cà phê đen</h3>
+                <p class="prod-price">20.000 VND</p>
+            </a>
+        </div>
+
+        <div class="prod">
+            <a href="~/ProDuctDetail/BacSiu">
+                <img src="~/Content/images/sp3.png" class="prod-item-special2" />
+                <h3>Bạc Sỉu</h3>
+                <p class="prod-price">20.000 VND</p>
+            </a>
+        </div>
+        <div class="prod">
+            <a href="~/ProDuctDetail/SodaChanh">
+                <img src="~/Content/images/sp6.png" class="prod-item-special2" />
+                <h3>Soda Chanh</h3>
+                <p class="prod-price">25.000 VND</p>
+            </a>
+        </div>
+        <div class="prod">
+            <a href="~/ProDuctDetail/SocolaDaXay">
+                <img src="~/Content/images/sp12.png" class="prod-item-special2" />
+                <h3>Socola Đá Xay</h3>
+                <p class="prod-price">35.000 VND</p>
+            </a>
+        </div>
+        <div class="prod">
+            <a href="~/ProDuctDetail/TraVai">
+                <img src="~/Content/images/sp18.png" class="prod-item-special1" />
+                <h3>Trà Vải</h3>
+                <p class="prod-price">35.000 VND</p>
+            </a>
+        </div>
+    </div>
+</div>
 

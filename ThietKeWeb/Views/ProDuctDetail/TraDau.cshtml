@@ -10,6 +10,17 @@
     <meta name="viewport" content="width=device-width" />
     <title>Trà Dâu</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script language="JavaScript" type="text/javascript">
+    function selectOption(clickedButton) {
+
+        var group = clickedButton.getAttribute('data-group');
+        var buttons = document.querySelectorAll(`button[data-group="${group}"]`);
+        for (var i = 0; i < buttons.length; i++) {
+            buttons[i].classList.remove('selected');
+        }
+        clickedButton.classList.add('selected');
+    }
+    </script>
     <style type="text/css">
         * {
             margin: 0;
@@ -32,8 +43,13 @@
         }
 
         .image {
+            display: block;
             background-color: antiquewhite;
+            border: hidden;
+            width: 550px;
+            height: 600px;
             margin-left: 50px;
+            text-align: center;
         }
 
         form {
@@ -58,12 +74,12 @@
         }
 
         a {
-            width: 500px;
+            width: 200px;
             text-align: center;
         }
 
         #button {
-            padding-top: 80px;
+            padding-top: 85px;
         }
 
         .ProdDescription {
@@ -71,30 +87,48 @@
             padding-top: 10px;
             padding-left: 10px;
         }
+
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            color: black;
+            background-color: none;
+            border: 1px solid #cccc;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-right: 5px;
+            margin-bottom: 10px;
+        }
+
+            button.selected {
+                background-color: forestgreen;
+            }
+
+        .group {
+            margin-bottom: 20px;
+        }
     </style>
 </head>
 <body>
     <div class="container">
         <div class="image">
-            <img src="~/Content/images/sp5.png" width="550" height="500" />
+            <img src="~/Content/images/sp5.png" width="500" height="500" style="margin-top:30px"/>
         </div>
         <div class="ProdInfo">
             <label>Trà Dâu</label>
             <p class="ProdPrice">35.000 VND</p>
             <p class="ProdType">Chọn size (bắt buộc)</p>
-            <form>
-                <input type="submit" class="btn btn-default" value="Nhỏ + 0 đ" />
-                <input type="submit" class="btn btn-default" value="Vừa + 10.000 đ" />
-                <input type="submit" class="btn btn-default" value="Lớn + 16.000 đ" />
-            </form>
+            <div class="group">
+                <button class="optionButton" data-group="1" onclick="selectOption(this)">Nhỏ + 0 đ</button>
+                <button class="optionButton" data-group="1" onclick="selectOption(this)">Vừa + 10.000 đ</button>
+                <button class="optionButton" data-group="1" onclick="selectOption(this)">Lớn + 16.000 đ</button>
+            </div>
             <p class="ProdType">Topping</p>
-            <form>
-                <input type="submit" class="btn btn-default" value="Trân Châu + 10.000 đ " />
-                <input type="submit" class="btn btn-default" value="Thạch Trái Cây + 10.000 đ " />
-            </form>
-            <form class="ProdType">
-                <input type="submit" class="btn btn-default" value="Nha Đam + 10.000 đ " />
-            </form>
+            <div class="group">
+                <button class="optionButton" data-group="2" onclick="selectOption(this)">Trân Châu + 10.000 đ</button>
+                <button class="optionButton" data-group="2" onclick="selectOption(this)">Thạch Trái Cây + 10.000 đ</button>
+                <button class="optionButton" data-group="2" onclick="selectOption(this)">Nha Đam + 10.000 đ</button>
+            </div>
             <div id="button">
                 <a href="~/Home/Index" class="btn btn-success">Đặt mua hàng</a>
             </div>

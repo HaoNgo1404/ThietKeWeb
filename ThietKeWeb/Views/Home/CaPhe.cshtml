@@ -1,0 +1,54 @@
+﻿
+@{
+    ViewBag.Title = "CaPhe";
+    Layout = "~/Views/Shared/MasterLayout.cshtml";
+}
+
+<style>
+    h2 {
+        color:red;
+        font-size: 40px;
+        margin-top:40px;
+    }
+    .prod {
+        display: block;
+        border: 1px solid lightgray;
+        border-radius: 4px;
+        margin: 20px;
+    }
+</style>
+
+<div>
+    <h2>CÀ PHÊ</h2>
+    <p>
+        Cà phê là một loại thức uống được pha chế từ hạt của cây cà phê, một loại cây thuộc chi Coffea, phổ biến ở nhiều nơi trên thế giới, đặc biệt là ở các nước nhiệt đới như Việt Nam, Brazil, Colombia, và Ethiopia.
+        Thức uống này nổi bật với hương thơm nồng nàn và vị đắng đặc trưng, đem đến một trải nghiệm tinh tế và phong phú về mặt giác quan.
+    </p>
+    <br />
+    <section id="featureProd">
+        <div class="prod-container">
+            <div class="prod">
+                <a href="~/ProDuctDetail/CaPheDen">
+                    <img src="~/Content/images/sp1.png" class="prod-item-special2" />
+                    <h3>Cà phê đen</h3>
+                    <p class="prod-price">20.000 VND</p>
+                </a>
+            </div>
+            <div class="prod">
+                <a href="~/ProDuctDetail/BacSiu">
+                    <img src="~/Content/images/sp3.png" class="prod-item-special2" />
+                    <h3>Bạc Sỉu</h3>
+                    <p class="prod-price">20.000 VND</p>
+                </a>
+            </div>
+            <div class="prod">
+                <a href="~/ProDuctDetail/CapheCaramel">
+                    <img src="~/Content/images/sp7.png" class="prod-item-special5" />
+                    <h3>Cà Phê Caramel</h3>
+                    <p class="prod-price">20.000 VND</p>
+                </a>
+            </div>
+        </div>
+    </section>
+</div>
+

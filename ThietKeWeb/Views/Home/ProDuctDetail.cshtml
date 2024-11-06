@@ -4,187 +4,161 @@
     Layout = "~/Views/Shared/MasterLayout.cshtml";
 }
 
-<style type="text/css">
-    h2 {
-        text-align: center;
-        vertical-align: middle;
+<script type="text/javascript">
+    document.addEventListener('DOMContentLoaded', function () {
+        const contentDivs = document.querySelectorAll('.content');
+        contentDivs.forEach(div => {
+            div.classList.add('loaded'); 
+        });
+    });
+</script>
+<style>
+    .banner {
+        max-width: 100%;
+        height: 400px;
+        display:flex;
+        justify-content: space-around;
+        align-items:center;
+    }
+    .content {
+        opacity: 0;
+        transform: translateY(100px);
+        transition: opacity 2s ease, transform 2s ease;
+    }
+    .content.loaded {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    .product1 {
+        font-size: 40px;
+        color: #faebd7;
+        cursor: pointer;
+        transition: color 0.5s ease;
+    }
+    .product1:hover {
+        color: red;
+    }
+    .product2 {
+        font-size: 40px;
+        cursor: pointer;
+        color: white;
+        transition: color 0.5s ease;
     }
 
-    a {
-        text-decoration: none;
+    .product2:hover {
+        color: red;
+    }
+    .product3 {
+        font-size: 40px;
+        cursor: pointer;
+        color: #006400;
+        transition: color 0.5s ease;
+    }
+
+    .product3:hover {
+        color: #b22830;
+    }
+    .product4 {
+        font-size: 40px;
+        cursor: pointer;
+        color: deepskyblue;
+        transition: color 0.5s ease;
+    }
+
+        .product4:hover {
+            color: red;
+        }
+    .detail {
+        padding-top: 10px;
+    }
+    .more_detail {
+        display: block;
+        border: 1px solid;
+        border-radius: 4px;
+        text-align: center;
+        padding: 5px;
+        width: 33%;
+
     }
 </style>
+<div>
+    <a href="~/Home/CaPhe">
+        <div class="banner" style=" background-color: black; position:relative; z-index: 1">
+            <div>
+                <img src="~/Content/images/sp1.png" width="470" height="470" class="content" style="position: relative; z-index: 1">
+            </div>
+            <div class="detail" style=" text-align: right;">
+                <label class="product1" style=" margin-right: 30px"><span class="content">CÀ PHÊ</span></label>
+                <br />
+                <p class="descript content" style=" color: #faebd7">
+                    Cà phê là một loại thức uống được pha chế từ hạt của cây cà phê, một loại cây thuộc chi Coffea, phổ biến ở nhiều nơi trên thế giới, đặc biệt là ở các nước nhiệt đới như Việt Nam, Brazil, Colombia, và Ethiopia.
+                    Thức uống này nổi bật với hương thơm nồng nàn và vị đắng đặc trưng, đem đến một trải nghiệm tinh tế và phong phú về mặt giác quan.
+                </p>
+                <br />
+                <span class="more_detail content" style="float: right; margin-right: 30px; color: #faebd7; border-color: #faebd7">Khám phá thêm</span>
+            </div>
+        </div>
+    </a>
 
-<section id="featureProd">
-    <div class="prod-list">
-        <h2>Các loại thức uống</h2>
-    </div>
-    <div class="prod-container">
-        <div class="prod">
-            <a href="~/ProDuctDetail/CaPheDen">
-                <img src="~/Content/images/sp1.png" class="prod-item-special4" />
-                <h3>Cà phê đen</h3>
-                <p class="prod-description"></p>
-                <p class="prod-price">20.000 VND</p>
-            </a>
+    <a href="~/Home/Tra">
+        <div class="banner" style="background-color: #aecb9d; position: relative; z-index: 2">
+            <div class="detail">
+                <label class="product2" style="margin-left: 10px"><span class="content">TRÀ</span></label>
+                <br />
+                <p class="descript content" style="color: white">
+                    Trà là một loại thức uống được làm từ lá cây Camellia sinensis, một loại cây bụi thường được trồng ở những vùng có khí hậu ẩm và mát như Trung Quốc, Nhật Bản, Ấn Độ, Việt Nam và Sri Lanka.
+                    Thức uống này phổ biến trên khắp thế giới với nhiều loại khác nhau, từ trà xanh, trà đen, trà ô long, đến trà trắng và trà Phổ Nhĩ, mỗi loại có quy trình chế biến và hương vị riêng biệt.
+                </p>
+                <br />
+                <span class="more_detail content" style="margin-left: 10px; color: white; border-color: white;">Khám phá thêm</span>
+            </div>
+            <div>
+                <img src="~/Content/images/sp20.png" width="470" height="470" class="content" style="position: relative; z-index: 2">
+            </div>
         </div>
-        <div class="prod">
-            <a href="~/ProDuctDetail/Matcha">
-                <img src="~/Content/images/sp2.png" class="prod-item-special4" />
-                <h3>Matcha</h3>
-                <p class="prod-description"></p>
-                <p class="prod-price">25.000 VND</p>
-            </a>
+    </a>
+
+    <a href="~/Home/DaXay">
+        <div class="banner" style=" background-color: lightgray; position: relative; z-index: 3">
+            <div>
+                <img src="~/Content/images/sp10.png" width="480" height="480" class="content" style="position: relative; z-index: 3">
+            </div>
+            <div class="detail" style=" text-align: right;">
+                <label class="product3 content" style=" margin-right: 30px"><span class="content">ĐÁ XAY</span></label>
+                <br />
+                <p class="descript content" style=" color: #006400">
+
+                    Đá xay là một loại thức uống mát lạnh, được pha chế bằng cách xay nhuyễn đá cùng các nguyên liệu khác như sữa, kem, cà phê, trái cây, hoặc siro để tạo ra một kết cấu đặc, mịn và có hương vị thơm ngon.
+                    Đá xay còn được biết đến với tên gọi "frappe" hoặc "smoothie," tùy thuộc vào thành phần và hương vị.
+                </p>
+                <br />
+                <span class="more_detail content" style="float: right; margin-right: 30px; color: #006400; border-color: #006400">Khám phá thêm</span>
+            </div>
         </div>
-        <div class="prod">
-            <a href="~/ProDuctDetail/BacSiu">
-                <img src="~/Content/images/sp3.png" class="prod-item-special4" />
-                <h3>Bạc Sỉu</h3>
-                <p class="prod-description"></p>
-                <p class="prod-price">20.000 VND</p>
-            </a>
+    </a>
+
+    <a href="~/Home/Khac">
+        <div class="banner" style="background-color: aliceblue; position: relative; z-index: 4">
+            <div class="detail">
+                <label class="product4 content" style="margin-left: 10px"><span class="content">KHÁC</span></label>
+                <br />
+                <p class="descript content" style="color: deepskyblue">
+                    Gồm nhiều thức uống khác như là Matcha, Chanh Tắc Mật Ong, Soda Chanh và các loại trà sữa khác nhau.
+                </p>
+                <br />
+                <span class="more_detail content" style="margin-left: 10px; color: deepskyblue; border-color: deepskyblue;">Khám phá thêm</span>
+            </div>
+            <div>
+                <img src="~/Content/images/sp16.png" width="420" height="420" class="content" style="position: relative; z-index: 4">
+            </div>
         </div>
-        <div class="prod">
-            <a href="~/ProDuctDetail/ChanhTacMatOng">
-                <img src="~/Content/images/sp4.png" class="prod-item" />
-                <h3>Chanh Tắc Mật Ong</h3>
-                <p class="prod-description"></p>
-                <p class="prod-price">30.000 VND</p>
-            </a>
+    </a>
+
+</div>
+@*
+    <section id="featureProd">
+        <div class="prod-container">
+            
         </div>
-        <div class="prod">
-            <a href="~/ProDuctDetail/TraDau">
-                <img src="~/Content/images/sp5.png" class="prod-item" />
-                <h3>Trà Dâu</h3>
-                <p class="prod-description"></p>
-                <p class="prod-price">35.000 VND</p>
-            </a>
-        </div>
-    </div>
-    <div class="prod-container">
-        <div class="prod">
-            <a href="~/ProDuctDetail/SodaChanh">
-                <img src="~/Content/images/sp6.png" class="prod-item" />
-                <h3>Soda Chanh</h3>
-                <p class="prod-description"></p>
-                <p class="prod-price">25.000 VND</p>
-            </a>
-        </div>
-        <div class="prod">
-            <a href="~/ProDuctDetail/CapheCaramel">
-                <img src="~/Content/images/sp7.png" class="prod-item-special1" />
-                <h3>Cà Phê Caramel</h3>
-                <p class="prod-description"></p>
-                <p class="prod-price">20.000 VND</p>
-            </a>
-        </div>
-        <div class="prod">
-            <a href="~/ProDuctDetail/TraThachDau">
-                <img src="~/Content/images/sp8.png" class="prod-item" />
-                <h3>Trà Thạch Dâu</h3>
-                <p class="prod-description"></p>
-                <p class="prod-price">25.000 VND</p>
-            </a>
-        </div>
-        <div class="prod">
-            <a href="~/ProDuctDetail/TraNho">
-                <img src="~/Content/images/sp9.png" class="prod-item-special2" />
-                <h3>Trà Nho</h3>
-                <p class="prod-description"></p>
-                <p class="prod-price">35.000 VND</p>
-            </a>
-        </div>
-        <div class="prod">
-            <a href="~/ProDuctDetail/OreoDaXay">
-                <img src="~/Content/images/sp10.png" class="prod-item" />
-                <h3>Oreo Đá Xay</h3>
-                <p class="prod-description"></p>
-                <p class="prod-price">30.000 VND</p>
-            </a>
-        </div>
-    </div>
-    <div class="prod-container">
-        <div class="prod">
-            <a href="~/ProDuctDetail/MiloDaXay">
-                <img src="~/Content/images/sp11.png" class="prod-item-special1" />
-                <h3>Milo Đá Xay</h3>
-                <p class="prod-description"></p>
-                <p class="prod-price">25.000 VND</p>
-            </a>
-        </div>
-        <div class="prod">
-            <a href="~/ProDuctDetail/SocolaDaXay">
-                <img src="~/Content/images/sp12.png" class="prod-item" />
-                <h3>Socola Đá Xay</h3>
-                <p class="prod-description"></p>
-                <p class="prod-price">35.000 VND</p>
-            </a>
-        </div>
-        <div class="prod">
-            <a href="~/ProDuctDetail/CaramelDaXay">
-                <img src="~/Content/images/sp13.png" class="prod-item-special1" />
-                <h3>Caramel Đá Xay</h3>
-                <p class="prod-description"></p>
-                <p class="prod-price">35.000 VND</p>
-            </a>
-        </div>
-        <div class="prod">
-            <a href="~/ProDuctDetail/DauDaXay">
-                <img src="~/Content/images/sp14.png" class="prod-item-special3" />
-                <h3>Dâu Đá Xay</h3>
-                <p class="prod-description"></p>
-                <p class="prod-price">30.000 VND</p>
-            </a>
-        </div>
-        <div class="prod">
-            <a href="~/ProDuctDetail/MatchaSocolaDaXay">
-                <img src="~/Content/images/sp15.png" class="prod-item" />
-                <h3>Matcha Socola Đá Xay</h3>
-                <p class="prod-description"></p>
-                <p class="prod-price">25.000 VND</p>
-            </a>
-        </div>
-    </div>
-    <div class="prod-container">
-        <div class="prod">
-            <a href="~/ProDuctDetail/SuaTuoiTranChauDuongNau">
-                <img src="~/Content/images/sp16.png" class="prod-item" />
-                <h3>Sữa Tươi Trân Châu Đường Nâu</h3>
-                <p class="prod-description"></p>
-                <p class="prod-price">20.000 VND</p>
-            </a>
-        </div>
-        <div class="prod">
-            <a href="~/ProDuctDetail/TraSuaTruyenThong">
-                <img src="~/Content/images/sp17.png" class="prod-item" />
-                <h3>Trà Sữa Truyền Thống</h3>
-                <p class="prod-description"></p>
-                <p class="prod-price">30.000 VND</p>
-            </a>
-        </div>
-        <div class="prod">
-            <a href="~/ProDuctDetail/TraVai">
-                <img src="~/Content/images/sp18.png" class="prod-item-special2" />
-                <h3>Trà Vải</h3>
-                <p class="prod-description"></p>
-                <p class="prod-price">35.000 VND</p>
-            </a>
-        </div>
-        <div class="prod">
-            <a href="~/ProDuctDetail/TraSuaTranChauTrang">
-                <img src="~/Content/images/sp19.png" class="prod-item-special2" />
-                <h3>Trà Sữa Trân Châu Trắng</h3>
-                <p class="prod-description"></p>
-                <p class="prod-price">30.000 VND</p>
-            </a>
-        </div>
-        <div class="prod">
-            <a href="~/ProDuctDetail/TraDen">
-                <img src="~/Content/images/sp20.png" class="prod-item" />
-                <h3>Trà Đen</h3>
-                <p class="prod-description"></p>
-                <p class="prod-price">25.000 VND</p>
-            </a>
-        </div>
-    </div>
-</section>
+    </section>
+*@

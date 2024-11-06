@@ -28,11 +28,11 @@
     }
 
     .button {
-        width: 150px;
-        height: 50px;
+        font-size: 20px;
         float: right;
-        margin-top: 20px;
-        margin-right: 250px;
+        margin-top: 10px;
+        margin-right: 150px;
+        margin-bottom:10px;
     }
 
     th {
@@ -45,23 +45,43 @@
     }
 </style>
 <script language="Javascript">
+    const numrows = 2
     function CalculateTotal() {
-        // Lấy giá trị từ các ô nhập liệu
-        var dg = parseFloat(document.getElementById("iPrice").value); // Ép kiểu giá trị đơn giá thành số
-        var sl = parseFloat(document.getElementById("iQuantity").value);
-        var lbTotal = document.getElementById("lbTotal");
+        for (let i = 1; i <= numrows; i++) { 
+            var dg = parseFloat(document.getElementById("iPrice" + i).value); // Ép kiểu giá trị đơn giá thành số
+            var sl = parseFloat(document.getElementById("iQuantity" + i).value);
+            var lbTotal = document.getElementById("lbTotal" + i);
         // Kiểm tra nếu đơn giá hoặc số lượng chưa nhập hoặc không hợp lệ
-        if (isNaN(dg) || dg <= 0) {
-            alert("Đơn giá phải lớn hơn 0");
-            return;
+            if (isNaN(dg) || dg <= 0) {
+                alert("Đơn giá phải lớn hơn 0");
+                return;
+            }
+            if (isNaN(sl) || sl <= 0 || sl > 15) {
+                alert("Số lượng phải trong khoảng 1 - 15");
+                return;
+            }
+            // Tính toán thành tiền và cập nhật kết quả
+            lbTotal.innerText = dg * sl;
         }
-        if (isNaN(sl) || sl <= 0 || sl > 15) {
-            alert("Số lượng phải trong khoảng 1 - 15");
-            return;
-        }
-        // Tính toán thành tiền và cập nhật kết quả
-        lbTotal.innerText = dg * sl;
     }
+    function ConfirmPayment() {
+        let total = 0;
+        for (let i = 1; i <= numrows; i++) { 
+            const lbTotal = parseFloat(document.getElementById("lbTotal" + i).innerText) || 0;
+            total += lbTotal;
+        }
+        if (total <= 0) {
+            alert("Thanh toán thất bại! Vui lòng nhập số lượng và kiểm tra tổng tiền trước khi thanh toán.");
+            return;
+        }
+        alert("Thanh toán thành công! Cảm ơn bạn đã mua sản phẩm của chúng tôi.");
+
+        for (let i = 1; i <= numrows; i++) { 
+            document.getElementById("iQuantity" + i).value = 0;
+            document.getElementById("lbTotal" + i).innerText = " ";
+        }
+    }
+    document.addEventListener('DOMContentLoaded', CalculateTotal);
     function selectProduct(obj) {
         var errMsg = document.getElementById("err_msg");
         var value = obj.value;
@@ -73,7 +93,7 @@
     }
 </script>
 <h1>Giỏ Hàng</h1>
-<table border="1" width="1000" height="100">
+<table class="table table-bordered" width="1000" height="100">
     <tr>
         <th>Hình Ảnh</th>
         <th>Tên Sản Phẩm</th>
@@ -85,18 +105,35 @@
         <td><img src="~/Content/images/sp1.png" /></td>
         <td>Cà phê đen</td>
         <td>
-            <input type="text" id="iPrice" name="Price" value="20000" readonly class="no-border" />
+            <input type="text" id="iPrice1" name="Price" value="20000" readonly class="no-border" />
         </td>
         <td>
-            <input type="number" id="iQuantity" name="Quantity" value="1" min="1" max="15"
+            <input type="number" id="iQuantity1" name="Quantity" value="0" min="0" max="15"
                    oninput="CalculateTotal();" />
         </td>
         <td>
-            <label id="lbTotal"></label>
+            <label id="lbTotal1"></label>
+        </td>
+    </tr>
+    <tr>
+        <td><img src="~/Content/images/sp3.png" /></td>
+        <td>Bạc Sỉu</td>
+        <td>
+            <input type="text" id="iPrice2" name="Price" value="20000" readonly class="no-border" />
+        </td>
+        <td>
+            <input type="number" id="iQuantity2" name="Quantity" value="0" min="0" max="15"
+                   oninput="CalculateTotal();" />
+        </td>
+        <td>
+            <label id="lbTotal2"></label>
         </td>
     </tr>
 </table>
-<button type="button" class="btn btn-danger button">Xác nhận</button>
+<div class="button">
+    <button type="submit" class="btn btn-success " onclick="ConfirmPayment()">Thanh toán</button> |
+    <a href="~/Home/Index" class="btn btn-danger ">Trang chủ</a>
+</div>
 @*<html>
     <head>
         <title>TÍNH TIỀN</title>

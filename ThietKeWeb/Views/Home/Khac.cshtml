@@ -1,0 +1,75 @@
+﻿
+@{
+    ViewBag.Title = "Khac";
+    Layout = "~/Views/Shared/MasterLayout.cshtml";
+}
+
+<style>
+    h2 {
+        color: red;
+        font-size: 40px;
+        margin-top: 40px;
+    }
+
+    .prod {
+        display: block;
+        border: 1px solid lightgray;
+        border-radius: 4px;
+        margin: 20px;
+    }
+</style>
+
+<div>
+    <h2>TRÀ</h2>
+    <p>
+        Gồm nhiều thức uống khác như là Matcha, Chanh Tắc Mật Ong, Soda Chanh và các loại trà sữa khác nhau..
+    </p>
+    <br />
+    <section id="featureProd">
+        <div class="prod-container">
+            <div class="prod">
+                <a href="~/ProDuctDetail/Matcha">
+                    <img src="~/Content/images/sp2.png" class="prod-item-special2" />
+                    <h3>Matcha</h3>
+                    <p class="prod-price">25.000 VND</p>
+                </a>
+            </div>
+            <div class="prod">
+                <a href="~/ProDuctDetail/ChanhTacMatOng">
+                    <img src="~/Content/images/sp4.png" class="prod-item-special2" />
+                    <h3>Chanh Tắc Mật Ong</h3>
+                    <p class="prod-price">30.000 VND</p>
+                </a>
+            </div>
+            <div class="prod">
+                <a href="~/ProDuctDetail/SodaChanh">
+                    <img src="~/Content/images/sp6.png" class="prod-item-special2" />
+                    <h3>Soda Chanh</h3>
+                    <p class="prod-price">25.000 VND</p>
+                </a>
+            </div>
+            <div class="prod">
+                <a href="~/ProDuctDetail/SuaTuoiTranChauDuongNau">
+                    <img src="~/Content/images/sp16.png" class="prod-item-special2" />
+                    <h3>Sữa Tươi Trân Châu Đường Nâu</h3>
+                    <p class="prod-price">20.000 VND</p>
+                </a>
+            </div>
+            <div class="prod">
+                <a href="~/ProDuctDetail/TraSuaTruyenThong">
+                    <img src="~/Content/images/sp17.png" class="prod-item-special2" />
+                    <h3>Trà Sữa Truyền Thống</h3>
+                    <p class="prod-price">30.000 VND</p>
+                </a>
+            </div>
+            <div class="prod">
+                <a href="~/ProDuctDetail/TraSuaTranChauTrang">
+                    <img src="~/Content/images/sp19.png" class="prod-item-special1" />
+                    <h3>Trà Sữa Trân Châu Trắng</h3>
+                    <p class="prod-price">30.000 VND</p>
+                </a>
+            </div>
+        </div>
+    </section>
+</div>
+

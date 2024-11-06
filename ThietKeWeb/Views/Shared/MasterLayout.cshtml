@@ -1,7 +1,7 @@
 ﻿<!DOCTYPE html>
 <html>
 <head>
-    <meta name="viewport" content="width=device-width" />
+    <meta name="viewport" content="width=device-width", initial-scale="1.0" />
     <title>@ViewBag.Title</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
@@ -18,7 +18,6 @@
             font-weight: bold;
             background-color: #f0f0f0;
             text-decoration: none;
-            width:100%;
         }
 
         .header {
@@ -28,6 +27,8 @@
             display: flex;
             flex-wrap: wrap;
             align-items: center;
+            justify-content:space-around;
+            margin-bottom: 10px;
         }
 
         .logo {
@@ -43,7 +44,7 @@
         }
 
         .search {
-            margin-left: 5vw;
+
             border: 1px solid #ccc;
             border-radius: 8px;
             width: 450px;
@@ -89,7 +90,7 @@
         }
 
         .menu {
-            margin-left: 2vw;
+
         }
 
         li {
@@ -147,11 +148,12 @@
         .list {
             display: flex;
             align-items: center;
+            justify-content:space-around;
+            flex-wrap:wrap;
         }
 
         .menu1 {
             color: white;
-            margin-left: 10vw;
             display: inline-block;
             block-size: 35px;
             text-decoration: none;
@@ -165,7 +167,6 @@
             }
 
         .menu2 {
-            margin-left: 150px;
             color: white;
             text-decoration: none;
             display: inline-block;
@@ -180,7 +181,6 @@
             }
 
         .menu3 {
-            margin-left: 150px;
             color: white;
             display: inline-block;
             block-size: 35px;
@@ -196,83 +196,110 @@
 
         .list li {
             cursor: pointer;
-            position: relative;
+        }
+        .header{
+            position:relative;
         }
 
         .dropdown-content {
-            display: none;
+            visibility:hidden;
+            opacity: 0;
             position: absolute;
             list-style-type: none;
-            z-index: 1;
-            left: -21.25vw;
+            z-index: 999;
+            left: 0;
             top: 100%;
-            width: 100vw;
+            width: 100%;
+            box-sizing: border-box;
+            padding: 10px 0;
+            text-align: center;
+            transition: all 0.6s ease;
         }
 
         .dropdown-content-list {
             width: 100vw;
             height: 250px;
-            text-align: center;
             margin-top: 15px;
             white-space: nowrap;
         }
 
+        .content {
+            margin-left: 30px;
+        }
+
         .dropdown-content a {
             text-decoration: none;
-            transition: all 0.2s ease;
             color: #ffcc00;
         }
-        .content{
-            margin-left:30px;
+        .dropdown-content li a {
+            transition: color 0.3s ease;
         }
 
         .dropdown-content li a:hover {
-            color: #ffcc00;
+            color: lightcyan;
             background-color: inherit;
         }
 
         .dropdown-btn:hover .dropdown-content {
             display: flex;
             background-color: #53382C;
+            opacity:1;
+            visibility:visible;
         }
 
         .menu2:hover .dropdown-content {
             display: block;
+            opacity: 1;
+            visibility: visible;
         }
 
         .dropdown-content {
             background-color: transparent;
-            transition: all 0.6s ease;
         }
 
         .dropdown-content-1 {
-            display: none;
+            visibility: hidden;
+            opacity: 0;
             position: absolute;
             list-style-type: none;
-            z-index: 1;
-            left: -60.75vw;
+            z-index: 999;
+            left: 0;
             top: 100%;
-            width: 100vw;
+            width: 100%;
+            text-align: center;
+            transition: all 0.6s ease;
         }
 
             .dropdown-content-1 a {
                 text-decoration: none;
-                transition: all 0.2s ease;
                 color: #ffcc00;
+            }
+        .dropdown-content-list-1 {
+            width: 100vw;
+            height: 100px;
+            margin-top: 15px;
+            white-space: nowrap;
+        }
+            .dropdown-content-1 li a {
+                transition: letter-spacing 0.5s ease;
             }
 
             .dropdown-content-1 li a:hover {
-                letter-spacing: 2px;
+                letter-spacing:2px;
                 background-color: inherit;
             }
 
         .dropdown-btn:hover .dropdown-content-1 {
             display: flex;
             background-color: #53382C;
+            opacity:1;
+            visibility:visible;
         }
 
         .menu2:hover .dropdown-content-1 {
             display: block;
+            opacity: 1;
+            visibility: visible;
         }
 
         .dropdown-content-1 {
@@ -282,10 +309,13 @@
 
         .prod-name {
             display: flow;
+            justify-content: space-around;
             padding-top: 4px;
         }
 
         .prod-name-list {
+            font-size:16px;
+            font-weight:normal;
             text-align: center;
             text-decoration: none;
         }
@@ -294,7 +324,7 @@
             color: white;
             position: relative;
             text-decoration: none;
-            transition: all 0.2s ease;
+            transition: all 0.4s ease;
         }
 
         .prod-name li a:hover {
@@ -315,19 +345,21 @@
 
         #featureProd {
             text-align: center;
-            background-color: antiquewhite;
+            width:100%;
         }
 
         .prod-list {
             width: 100%;
-            background-color: yellowgreen;
-            height: 30px;
+            background-color: brown;
             margin-bottom: 20px;
         }
 
         h2 {
             font-size: 20px;
-            vertical-align: middle;
+            padding:10px;
+            font-weight:bold;
+            color:white;
+            margin: auto 0;
         }
 
         .prod-container {
@@ -345,11 +377,11 @@
         }
 
         .prod {
-            width: 200px;
+            max-width: 200px;
         }
 
         .prod-item {
-            width: 100%;
+            width: 90px;
             height: 150px;
             transition: transform 0.2s ease;
         }
@@ -379,7 +411,7 @@
             }
 
         .prod-item-special3 {
-            width: 120px;
+            width: 103px;
             height: 150px;
             transition: transform 0.2s ease;
         }
@@ -389,7 +421,7 @@
             }
 
         .prod-item-special4 {
-            width: 180px;
+            width: 186px;
             height: 150px;
             transition: transform 0.2s ease;
         }
@@ -397,17 +429,28 @@
             .prod-item-special4:hover {
                 transform: translateY(-5px);
             }
+        .prod-item-special5 {
+            width: 80px;
+            height: 150px;
+            transition: transform 0.2s ease;
+        }
+
+            .prod-item-special5:hover {
+                transform: translateY(-5px);
+            }
+        .prod-item-special6 {
+            width: 161px;
+            height: 150px;
+            transition: transform 0.2s ease;
+        }
+
+            .prod-item-special6:hover {
+                transform: translateY(-5px);
+            }
 
         h3 {
             font-size: 16px;
             color: yellowgreen;
-        }
-
-        .prod-description {
-            font-size: 14px;
-            color: black;
-            font: Arial;
-            width: 100%;
         }
 
         .prod-price {
@@ -421,6 +464,8 @@
             color: white;
             font-size: 18px;
             clear: both;
+            margin-top: 10px;
+            position:relative;
             display: flex;
             justify-content: center;
         }
@@ -468,6 +513,7 @@
     </style>
 </head>
 <body>
+    <div class="container-fluid">
     <header class="header">
         <a href="~/Home/Index"><img src="~/Content/images/logo1.png" class="logo" /></a>
         <div class="head-middle">
@@ -477,18 +523,18 @@
             </button>
         </div>
         <ul class="menu">
-            <li><a href="~/Home/GioHang" id="selection" class="cart"><img src="~/Content/images/Shopping-cart-icon.png" class="selection-image" />Giỏ hàng<i class="fas fa-circle"><span class="cart-count">0</span></i></a></li>
+            <li><a href="~/Home/GioHang" id="selection" class="cart"><img src="~/Content/images/Shopping-cart-icon.png" class="selection-image" />Giỏ hàng<i class="fas fa-circle"><span class="cart-count">2</span></i></a></li>
             <li><a href="~/Home/Favourite" id="selection"><img src="~/Content/images/Heart-icon.png" class="selection-image" />Yêu thích</a></li>
             <li><a href="~/Home/LogIn" id="selection"><img src="~/Content/images/Character-icon.png" class="selection-image" />Đăng Nhập/Đăng Ký</a></li>
         </ul>
         <div class="list-background">
             <ul class="list">
-                <li><a href="~/Home/Index" class="menu1">Trang chủ</a></li>
+                <li><a href="~/Home/Index" class="menu1" style="z-index: 2; position: relative">Trang chủ</a></li>
                 <li class="dropdown-btn">
-                    <a href="~/Home/ProDuctDetail" class="menu2">Thực đơn</a>
-                    <ul class="dropdown-content">
+                    <a href="~/Home/ProDuctDetail" class="menu2" style="z-index: 2; position: relative">Thực đơn</a>
+                    <ul class="dropdown dropdown-content">
                         <li class="dropdown-content-list">
-                            <a href="" class="content">Cà phê</a>
+                            <a href="~/Home/CaPhe" class="content">Cà phê</a>
                             <ul class="prod-name">
                                 <li class="prod-name-list"><a href="~/ProDuctDetail/CaPheDen">Cà phê đen</a></li>
                                 <li class="prod-name-list"><a href="~/ProDuctDetail/BacSiu">Bạc Sỉu</a></li>
@@ -496,7 +542,7 @@
                             </ul>
                         </li>
                         <li class="dropdown-content-list">
-                            <a href="" class="content">Trà</a>
+                            <a href="~/Home/Tra" class="content">Trà</a>
                             <ul class="prod-name">
                                 <li class="prod-name-list"><a href="~/ProDuctDetail/TraDau">Trà Dâu</a></li>
                                 <li class="prod-name-list"><a href="~/ProDuctDetail/TraThachDau">Trà Thạch Dâu</a></li>
@@ -506,7 +552,7 @@
                             </ul>
                         </li>
                         <li class="dropdown-content-list">
-                            <a href="" class="content">Đá Xay</a>
+                            <a href="~/Home/DaXay" class="content">Đá Xay</a>
                             <ul class="prod-name">
                                 <li class="prod-name-list"><a href="~/ProDuctDetail/OreoDaXay">Oreo Đá Xay</a></li>
                                 <li class="prod-name-list"><a href="~/ProDuctDetail/MiloDaXay">Milo Đá Xay</a></li>
@@ -517,7 +563,7 @@
                             </ul>
                         </li>
                         <li class="dropdown-content-list">
-                            <a href="" class="content">Khác</a>
+                            <a href="~/Home/Khac" class="content">Khác</a>
                             <ul class="prod-name">
                                 <li class="prod-name-list"><a href="~/ProDuctDetail/Matcha">Matcha</a></li>
                                 <li class="prod-name-list"><a href="~/ProDuctDetail/ChanhTacMatOng">Chanh Tắc Mật Ong</a></li>
@@ -531,15 +577,15 @@
                 </li>
                 <li><a href="~/Home/Recruit" class="menu3">Tuyển dụng</a></li>
                 <li class="dropdown-btn">
-                    <a href="~/Home/About us" class="menu3">Về chúng tôi</a>
-                    <ul class="dropdown-content-1">
-                        <li class="dropdown-content-list">
+                    <a href="~/Home/AboutUs" class="menu3">Về chúng tôi</a>
+                    <ul class="dropdown dropdown-content-1">
+                        <li class="dropdown-content-list-1">
                             <a href="~/Home/NguonGoc" class="content1">Nguồn gốc</a>
                         </li>
-                        <li class="dropdown-content-list">
+                        <li class="dropdown-content-list-1">
                             <a href="~/Home/DichVu" class="content1">Dịch Vụ</a>
                         </li>
-                        <li class="dropdown-content-list">
+                        <li class="dropdown-content-list-1">
                             <a href="~/Home/NgheNghiep" class="content1">Nghề nghiệp</a>
                         </li>
                     </ul>
@@ -576,5 +622,6 @@
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
     @RenderSection("scripts", required: false)
+        </div>
 </body>
 </html>

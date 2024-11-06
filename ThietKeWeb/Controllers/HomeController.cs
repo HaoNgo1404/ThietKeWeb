@@ -24,7 +24,27 @@ namespace ThietKeWeb.Controllers
         {
             return View();
         }
+        public ActionResult AboutUs()
+        {
+            return View();
+        }
         public ActionResult ProDuctDetail()
+        {
+            return View();
+        }
+        public ActionResult CaPhe()
+        {
+            return View();
+        }
+        public ActionResult Tra()
+        {
+            return View();
+        }
+        public ActionResult DaXay()
+        {
+            return View();
+        }
+        public ActionResult Khac()
         {
             return View();
         }
@@ -33,6 +53,10 @@ namespace ThietKeWeb.Controllers
             return View();
         }
         public ActionResult Recruit()
+        {
+            return View();
+        }
+        public ActionResult RecruitDetail()
         {
             return View();
         }
