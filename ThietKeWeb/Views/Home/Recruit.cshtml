@@ -1,7 +1,7 @@
 ﻿
 @{
     ViewBag.Title = "Tuyển Dụng";
-    Layout = null;
+    Layout = "~/Views/Shared/MasterLayout.cshtml";
 }
 <!DOCTYPE html>
 <html>
@@ -15,7 +15,7 @@
             margin: 0;
         }
         /*header*/
-        .header {
+        .re-header {
             background-color: #4B7864;
             display: flex;
             justify-content: center;
@@ -26,9 +26,10 @@
         h3 {
             margin: 0;
             font-size: 25px;
+            font-weight:bold;
         }
         /*-----------------------content--------------------------*/
-        .content {
+        .re-content {
             place-items: center;
             display: flex;
             flex-direction: column;
@@ -37,7 +38,7 @@
 
         .KhungTuyenDung {
             background-color: #4B7864;
-            width: 60%;
+            width: 62%;
             padding: 2%;
             margin-bottom: 10px;
             border-radius: 16px;
@@ -46,16 +47,18 @@
 
         h4 {
             color: #02542D;
+            margin-top:10px;
             font-size: 23px;
+            font-weight:bold;
             text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
         }
 
-        .content img {
+        .re-content img {
             width: 70%;
             padding: 5px;
         }
 
-        p {
+        .re-detail {
             margin: 0;
             padding-bottom: 15px;
             font-weight: bold;
@@ -91,66 +94,16 @@
                 text-decoration: none;
                 padding: 15px;
             }
-        /*----------------------------footer---------------------------*/
-        .footer {
-            background-color: #6c6565;
-            color: white;
-            font-size: 18px;
-            clear: both;
-            display: flex;
-            justify-content: center;
-        }
-
-        p {
-            margin-top: 20px;
-            margin-left: 10px;
-            margin-right: 30px;
-        }
-
-        .fb-icon-image {
-            width: 35px;
-            height: 35px;
-            margin-bottom: 10px;
-            margin-top: 10px;
-        }
-
-        .ins-icon-image {
-            width: 35px;
-            height: 35px;
-            margin-bottom: 10px;
-            margin-top: 10px;
-        }
-
-        .tw-icon-image {
-            width: 35px;
-            height: 35px;
-            margin-bottom: 10px;
-            margin-top: 10px;
-        }
-
-        .phone-icon-image {
-            width: 35px;
-            height: 35px;
-            margin-bottom: 10px;
-            margin-top: 10px;
-        }
-
-        .email-icon-image {
-            width: 35px;
-            height: 35px;
-            margin-bottom: 10px;
-            margin-top: 10px;
-        }
     </style>
 
 </head>
 <body>
     @*header*@
-    <div class="header">
+    <div class="re-header">
         <h3 style="color:white">BẠN ĐANG TÌM KIẾM MỘT CÔNG VIỆC ?</h3>
     </div>
     @*Content*@
-    <div class="content">
+    <div class="re-content">
         <h4>HÃY THAM GIA NGAY CÙNG CHÚNG TÔI</h4>
 
         @*hình ảnh tuyển dụng*@
@@ -162,7 +115,7 @@
         @*khung tuyển dụng*@
         <div class="KhungTuyenDung">
 
-            <p>TÌM KIẾM CÔNG VIỆC</p>
+            <p class="re-detail">TÌM KIẾM CÔNG VIỆC</p>
 
             @*bang tuyen dung*@
 
@@ -195,29 +148,6 @@
             </div>
         </div>
 
-    </div>
-    @*footer*@
-    <div class="footer">
-        <div>
-            <img src="~/Content/images/fb-icon.png" class="fb-icon-image" />
-            <img src="~/Content/images/ins-icon.png" class="ins-icon-image" />
-            <img src="~/Content/images/tw-icon.png" class="tw-icon-image" />
-        </div>
-        <div>
-            <p>&copy;  2018 Baron Coffee.  Powered by Group Baron</p>
-        </div>
-        <div>
-            <img src="~/Content/images/phone-icon.png" class="phone-icon-image" />
-        </div>
-        <div>
-            <p>0245269466</p>
-        </div>
-        <div>
-            <img src="~/Content/images/email-icon.png" class="email-icon-image" />
-        </div>
-        <div>
-            <p>customerservice@Baroncoffee.com.vn</p>
-        </div>
     </div>
 </body>
 </html>
