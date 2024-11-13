@@ -1,0 +1,164 @@
+﻿@model ThietKeWeb.Models.ViewModel.RegisterVM
+
+@{
+    ViewBag.Title = "Đăng ký";
+    Layout = null;
+}
+
+@Styles.Render("~/Content/css")
+@Scripts.Render("~/bundles/modernizr")
+<title>Register</title>
+<style>
+    .background-account {
+        background-image: url('../../content/images/background-account.jpg');
+        width: 100%;
+        height: 100vh;
+        background-repeat: no-repeat;
+        background-size: cover;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: auto;
+    }
+
+    .login {
+        padding: 40px 75px;
+        margin: auto;
+        background-color: rgba(255, 255, 255, 0.8);
+        backdrop-filter: blur(8px);
+        width: 600px;
+        max-width: 600px;
+        border-radius: 30px;
+        font-weight: normal;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    .place-logo {
+        text-align: center;
+    }
+
+    .logo {
+        width: 200px;
+        height: 100px;
+    }
+
+    .login-heading {
+        margin-top: 10px;
+        font-size: 30px;
+        font-weight: bold;
+        text-align: center;
+        color: dodgerblue;
+    }
+
+    .login-label {
+        font-size: 16px;
+        font-weight: bold;
+        margin-bottom: 5px;
+        margin-top: 20px;
+    }
+
+    .input-label {
+        width: 100%;
+        max-width: 500px;
+        height: 50px;
+    }
+
+    input {
+        max-width: 500px;
+        max-height: 50px;
+        border-radius: 6px;
+        border: 1px solid;
+    }
+
+    .submit {
+        margin-top: 10px;
+        text-align: center;
+    }
+
+    .login-submit {
+        width: 300px;
+    }
+
+    .no-account {
+        text-align: center;
+    }
+</style>
+<div class="background-account">
+    <div class="login">
+        <div class="place-logo">
+            <img src="~/Content/images/logo1.png" class="logo" />
+        </div>
+        <h1 class="login-heading">ĐĂNG KÝ TÀI KHOẢN</h1>
+        @using (Html.BeginForm("Register", "Admin_Account", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+        {
+            @Html.AntiForgeryToken()
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+            <div>
+                <label for="NameUser" class="login-label">Tên đăng nhập</label>
+                <br />
+                @Html.TextBoxFor(model => model.Username, new { @class = "input-label", @placeholder = "Tên đăng nhập" })
+                @Html.ValidationMessageFor(model => model.Username, "", new { @class = "text-danger" })
+            </div>
+            <br />
+            <div>
+                <label for="PasswordUser" class="login-label">Mật khẩu</label>
+                <br />
+                @Html.PasswordFor(model => model.Password, new { @class = "input-label", @placeholder = "Mật khẩu" })
+                @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
+
+            </div>
+            <br />
+            <div>
+                <label for="PasswordUser" class="login-label">Xác nhận mật khẩu</label>
+                <br />
+                @Html.PasswordFor(model => model.ConfirmPassword, new { @class = "input-label", @placeholder = "Xác nhận mật khẩu" })
+                @Html.ValidationMessageFor(model => model.ConfirmPassword, "", new { @class = "text-danger" })
+
+            </div>
+            <br />
+            <div>
+                <label for="CustomerName" class="login-label">Họ tên</label>
+                <br />
+                @Html.TextBoxFor(model => model.CustomerName, new { @class = "input-label", @placeholder = "Họ tên" })
+                @Html.ValidationMessageFor(model => model.CustomerName, "", new { @class = "text-danger" })
+
+            </div>
+            <br />
+            <div>
+                <label for="CustomerPhone" class="login-label">Số điện thoại</label>
+                <br />
+                @Html.TextBoxFor(model => model.CustomerPhone, new { @class = "input-label", @placeholder = "Số điện thoại" })
+                @Html.ValidationMessageFor(model => model.CustomerPhone, "", new { @class = "text-danger" })
+
+            </div>
+            <br />
+            <div>
+                <label for="CustomerEmail" class="login-label">Email</label>
+                <br />
+                @Html.TextBoxFor(model => model.CustomerEmail, new { @class = "input-label", @placeholder = "Email" })
+                @Html.ValidationMessageFor(model => model.CustomerEmail, "", new { @class = "text-danger" })
+
+            </div>
+            <br />
+            <div>
+                <label for="CustomerAddress" class="login-label">Địa chỉ</label>
+                <br />
+                @Html.TextBoxFor(model => model.CustomerAddress, new { @class = "input-label", @placeholder = "Địa chỉ" })
+                @Html.ValidationMessageFor(model => model.CustomerAddress, "", new { @class = "text-danger" })
+
+            </div>
+            <br />
+            <div class="submit">
+                <input type="submit" value="Đăng ký" class="btn btn-primary login-submit" />
+            </div>
+            <div class="no-account">
+                <span>
+                    Đã có tài khoản? |
+                    @Html.ActionLink("Đăng nhập", "Login", "Account", new { @style = "text-decoration: none; font-size: 20px" })
+                </span>
+            </div>
+
+        }
+    </div>
+</div>
+

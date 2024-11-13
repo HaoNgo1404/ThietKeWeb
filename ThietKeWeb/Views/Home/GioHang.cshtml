@@ -1,7 +1,8 @@
 ﻿@{
     ViewBag.Title = "GioHang";
-    Layout = "~/Views/Shared/MasterLayout.cshtml";
+    Layout = "~/Views/Shared/_MasterLayout.cshtml";
 }
+<link rel="stylesheet" href="~/Content/Layout.css" />
 <style type="text/css">
     body {
         text-align: center;
@@ -108,7 +109,7 @@
             <input type="text" id="iPrice1" name="Price" value="20000" readonly class="no-border" />
         </td>
         <td>
-            <input type="number" id="iQuantity1" name="Quantity" value="0" min="0" max="15"
+            <input type="number" id="iQuantity1" name="Quantity" value="1" min="0" max="15"
                    oninput="CalculateTotal();" />
         </td>
         <td>
@@ -122,7 +123,7 @@
             <input type="text" id="iPrice2" name="Price" value="20000" readonly class="no-border" />
         </td>
         <td>
-            <input type="number" id="iQuantity2" name="Quantity" value="0" min="0" max="15"
+            <input type="number" id="iQuantity2" name="Quantity" value="1" min="0" max="15"
                    oninput="CalculateTotal();" />
         </td>
         <td>

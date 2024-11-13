@@ -6,12 +6,12 @@
     <edmx:Diagrams>
       <Diagram DiagramId="967306ccd7d2418db54acbacaa4bb406" Name="Diagram1">
         <EntityTypeShape EntityType="ThietKeWebModel.Category" Width="1.5" PointX="0.75" PointY="1.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="ThietKeWebModel.Customer" Width="1.5" PointX="0.75" PointY="5" IsExpanded="true" />
-        <EntityTypeShape EntityType="ThietKeWebModel.Order" Width="1.5" PointX="3" PointY="5" IsExpanded="true" />
+        <EntityTypeShape EntityType="ThietKeWebModel.Customer" Width="1.5" PointX="5.375" PointY="3.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="ThietKeWebModel.Order" Width="1.5" PointX="8.125" PointY="1" IsExpanded="true" />
         <EntityTypeShape EntityType="ThietKeWebModel.OrderDetail" Width="1.5" PointX="5.25" PointY="1" IsExpanded="true" />
         <EntityTypeShape EntityType="ThietKeWebModel.Product" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
-        <EntityTypeShape EntityType="ThietKeWebModel.sysdiagram" Width="1.5" PointX="5.75" PointY="4.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="ThietKeWebModel.User" Width="1.5" PointX="1.5" PointY="8.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="ThietKeWebModel.sysdiagram" Width="1.5" PointX="10.25" PointY="1.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="ThietKeWebModel.User" Width="1.5" PointX="1.625" PointY="3.75" IsExpanded="true" />
         <AssociationConnector Association="ThietKeWebModel.FK_Pro_Category" ManuallyRouted="false" />
         <AssociationConnector Association="ThietKeWebModel.FK__Order__CustomerI__412EB0B6" ManuallyRouted="false" />
         <AssociationConnector Association="ThietKeWebModel.FK_User_Customer" ManuallyRouted="false" />

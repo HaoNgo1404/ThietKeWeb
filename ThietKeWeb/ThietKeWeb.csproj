@@ -53,6 +53,21 @@
       <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Owin, Version=4.2.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.4.2.2\lib\net45\Microsoft.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security, Version=4.2.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Security.4.2.2\lib\net45\Microsoft.Owin.Security.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Cookies, Version=4.2.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Security.Cookies.4.2.2\lib\net45\Microsoft.Owin.Security.Cookies.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Google, Version=4.2.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Security.Google.4.2.2\lib\net45\Microsoft.Owin.Security.Google.dll</HintPath>
+    </Reference>
+    <Reference Include="Owin, Version=1.0.0.0, Culture=neutral, PublicKeyToken=f0ebd12fd5e55cc5, processorArchitecture=MSIL">
+      <HintPath>..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
@@ -130,6 +145,7 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
+    <Compile Include="Areas\Admin\Controllers\Admin_AccountController.cs" />
     <Compile Include="Areas\Admin\Controllers\Admin_CategoriesController.cs" />
     <Compile Include="Areas\Admin\Controllers\Admin_CustomersController.cs" />
     <Compile Include="Areas\Admin\Controllers\Admin_OrderDetailsController.cs" />
@@ -137,6 +153,7 @@
     <Compile Include="Areas\Admin\Controllers\Admin_ProductsController.cs" />
     <Compile Include="Areas\Admin\Controllers\Admin_UsersController.cs" />
     <Compile Include="Areas\Admin\Controllers\TrangChuController.cs" />
+    <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ProDuctDetailController.cs" />
     <Compile Include="Global.asax.cs">
@@ -148,6 +165,7 @@
     <Compile Include="Models\Customer.cs">
       <DependentUpon>ThietKeWebModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\LoginVM.cs" />
     <Compile Include="Models\Order.cs">
       <DependentUpon>ThietKeWebModel.tt</DependentUpon>
     </Compile>
@@ -157,6 +175,8 @@
     <Compile Include="Models\Product.cs">
       <DependentUpon>ThietKeWebModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\RegisterVM.cs" />
+    <Compile Include="Models\SizeVM.cs" />
     <Compile Include="Models\sysdiagram.cs">
       <DependentUpon>ThietKeWebModel.tt</DependentUpon>
     </Compile>
@@ -197,10 +217,7 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\bootstrap.rtl.css" />
     <Content Include="Content\bootstrap.rtl.min.css" />
-    <Content Include="Content\images\640de1985503f35daa127.jpg" />
-    <Content Include="Content\images\660e8447fedd588301cc6.jpg" />
-    <Content Include="Content\images\78a5853531ae97f0cebf10.jpg" />
-    <Content Include="Content\images\a886e1ca9b503d0e64415.jpg" />
+    <Content Include="Content\images\background-account.jpg" />
     <Content Include="Content\images\banner.jpg" />
     <Content Include="Content\images\banner2.jpg" />
     <Content Include="Content\images\banner8.png" />
@@ -245,6 +262,7 @@
     <Content Include="Content\images\sp9.png" />
     <Content Include="Content\images\tea1.png" />
     <Content Include="Content\images\tw-icon.png" />
+    <Content Include="Content\Layout.css" />
     <Content Include="Content\LogIn.js" />
     <Content Include="Content\Register.js" />
     <Content Include="Content\stylesheet.css" />
@@ -276,7 +294,6 @@
       <DependentUpon>ThietKeWebModel.edmx</DependentUpon>
     </Content>
     <Content Include="Areas\Admin\Views\web.config" />
-    <Content Include="Areas\Admin\Views\Shared\AdminLayout.cshtml" />
     <Content Include="Areas\Admin\Views\TrangChu\Index.cshtml" />
     <Content Include="Areas\Admin\Views\Admin_Products\Create.cshtml" />
     <Content Include="Areas\Admin\Views\Admin_Products\Delete.cshtml" />
@@ -310,6 +327,11 @@
     <Content Include="Areas\Admin\Views\Admin_Orders\Details.cshtml" />
     <Content Include="Areas\Admin\Views\Admin_Orders\Edit.cshtml" />
     <Content Include="Areas\Admin\Views\Admin_Orders\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Shared\_AdminLayout.cshtml" />
+    <Content Include="Areas\Admin\Views\Admin_Account\ProfileInfo.cshtml" />
+    <Content Include="Areas\Admin\Views\Admin_Account\ChangePassword.cshtml" />
+    <Content Include="Areas\Admin\Views\Admin_Account\Register.cshtml" />
+    <Content Include="Areas\Admin\Views\Admin_Account\Login.cshtml" />
     <None Include="Scripts\jquery-3.7.0.intellisense.js" />
     <Content Include="Scripts\jquery-3.7.0.js" />
     <Content Include="Scripts\jquery-3.7.0.min.js" />
@@ -332,18 +354,13 @@
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="Views\Shared\MasterLayout.cshtml" />
-    <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Home\ProDuctDetail.cshtml" />
     <Content Include="Views\Home\Recruit.cshtml" />
     <Content Include="Views\Home\Address.cshtml" />
     <Content Include="Views\Home\GioHang.cshtml" />
     <Content Include="Views\Home\ThanhToan.cshtml" />
     <Content Include="Views\Home\CheckProduct.cshtml" />
-    <Content Include="Views\Home\Register.cshtml" />
-    <Content Include="Views\Home\LogIn.cshtml" />
     <Content Include="Views\Home\History.cshtml" />
-    <Content Include="Views\Home\Favourite.cshtml" />
     <Content Include="Views\ProDuctDetail\CaPheDen.cshtml" />
     <Content Include="Views\ProDuctDetail\Matcha.cshtml" />
     <Content Include="Views\ProDuctDetail\BacSiu.cshtml" />
@@ -374,10 +391,17 @@
     <Content Include="Views\Home\Khac.cshtml" />
     <Content Include="Views\Home\AboutUs.cshtml" />
     <Content Include="Views\Home\NguonGoc.cshtml" />
+    <Content Include="Views\Shared\_MasterLayout.cshtml" />
+    <Content Include="Views\Account\Register.cshtml" />
+    <Content Include="Views\Account\Login.cshtml" />
+    <Content Include="Views\Account\ProfileInfo.cshtml" />
+    <Content Include="Views\Account\ChangePassword.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Areas\Admin\Data\" />
+    <Folder Include="Views\TrangChu\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap.rtl.min.css.map" />

@@ -1,0 +1,145 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewBag.Title</title>
+    <link rel="stylesheet" href="~/Content/Layout.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body>
+    <div>
+        <header class="header">
+            <a href="@Url.Action("Index", "Home")"><img src="~/Content/images/logo1.png" class="logo" /></a>
+            <div class="head-middle">
+                <input type="text" class="search" placeholder="Mời nhập nước uống bạn muốn" />
+                <button type="button" class="search-button">
+                    <img src="~/Content/images/search-icon.JPG" class="search-image" />
+                </button>
+            </div>
+            <ul class="menu">
+                <li><a href="~/Home/GioHang" id="selection" class=" cart"><img src="~/Content/images/Shopping-cart-icon.png" class="selection-image" />Giỏ hàng<span class="cart-count">2</span></a></li>
+                <li class="dropdown">
+                    @if (Session["Username"] != null)
+                    {
+                        <a  class=" dropdown-toggle" role="button" data-toggle="dropdown" href="#"><img src="~/Content/images/Character-icon.png" class="selection-image" />@Session["Username"]</a>
+                        <div class="dropdown-menu">
+                            @Html.ActionLink("Thông tin tài khoản", "ProfileInfo", "Account", new { area = "" }, new { @class = "dropdown-item", @style = "color: black" })
+                            @Html.ActionLink("Đổi mật khẩu", "ChangePassword", "Account", new { area = "" }, new { @class = "dropdown-item", @style = "color: black" })
+                            <div class="dropdown-divider"></div>
+                            @Html.ActionLink("Đăng xuất", "Logout", "Account", new { area = "" }, new { @class = "dropdown-item", @style = "color: black" })
+                        </div>
+                    }
+                    else
+                    {
+                        <a href="#" class=" dropdown-toggle" role="button" data-toggle="dropdown"><img src="~/Content/images/Character-icon.png" class="selection-image" />Tài khoản</a>
+                        <div class="dropdown-menu">
+                            @Html.ActionLink("Đăng nhập", "Login", "Account", new { area = "" }, new { @class = "dropdown-item", @style = "color: black" })
+                            @Html.ActionLink("Đăng ký", "Register", "Account", new { area = "" }, new { @class = "dropdown-item", @style = "color: black" })
+                        </div>
+                    }
+                </li>
+            </ul>
+            <div class="list-background">
+                <ul class="list">
+                    <li><a href="@Url.Action("Index", "Home")" class="menu1 nav-link" style="z-index: 2; position: relative">Trang chủ</a></li>
+                    <li class="dropdown-btn">
+                        <a href="~/Home/ProDuctDetail" class="menu2 nav-link" style="z-index: 2; position: relative">Thực đơn</a>
+                        <ul class="dropdown dropdown-content">
+                            <li class="dropdown-content-list">
+                                <a href="~/Home/CaPhe" class="content">Cà phê</a>
+                                <ul class="prod-name">
+                                    <li class="prod-name-list"><a href="~/ProDuctDetail/CaPheDen">Cà phê đen</a></li>
+                                    <li class="prod-name-list"><a href="~/ProDuctDetail/BacSiu">Bạc Sỉu</a></li>
+                                    <li class="prod-name-list"><a href="~/ProDuctDetail/CapheCaramel">Cà phê Caramel</a></li>
+                                </ul>
+                            </li>
+                            <li class="dropdown-content-list">
+                                <a href="~/Home/Tra" class="content">Trà</a>
+                                <ul class="prod-name">
+                                    <li class="prod-name-list"><a href="~/ProDuctDetail/TraDau">Trà Dâu</a></li>
+                                    <li class="prod-name-list"><a href="~/ProDuctDetail/TraThachDau">Trà Thạch Dâu</a></li>
+                                    <li class="prod-name-list"><a href="~/ProDuctDetail/TraNho">Trà Nho</a></li>
+                                    <li class="prod-name-list"><a href="~/ProDuctDetail/TraVai">Trà Vải</a></li>
+                                    <li class="prod-name-list"><a href="~/ProDuctDetail/TraDen">Trà Đen</a></li>
+                                </ul>
+                            </li>
+                            <li class="dropdown-content-list">
+                                <a href="~/Home/DaXay" class="content">Đá Xay</a>
+                                <ul class="prod-name">
+                                    <li class="prod-name-list"><a href="~/ProDuctDetail/OreoDaXay">Oreo Đá Xay</a></li>
+                                    <li class="prod-name-list"><a href="~/ProDuctDetail/MiloDaXay">Milo Đá Xay</a></li>
+                                    <li class="prod-name-list"><a href="~/ProDuctDetail/SocolaDaXay">Socola Đá Xay</a></li>
+                                    <li class="prod-name-list"><a href="~/ProDuctDetail/CaramelDaXay">Caramel Đá Xay</a></li>
+                                    <li class="prod-name-list"><a href="~/ProDuctDetail/DauDaXay">Dâu Đá Xay</a></li>
+                                    <li class="prod-name-list"><a href="~/ProDuctDetail/MatchaSocolaDaXay">Matcha Socola Đá Xay</a></li>
+                                </ul>
+                            </li>
+                            <li class="dropdown-content-list">
+                                <a href="~/Home/Khac" class="content">Khác</a>
+                                <ul class="prod-name">
+                                    <li class="prod-name-list"><a href="~/ProDuctDetail/Matcha">Matcha</a></li>
+                                    <li class="prod-name-list"><a href="~/ProDuctDetail/ChanhTacMatOng">Chanh Tắc Mật Ong</a></li>
+                                    <li class="prod-name-list"><a href="~/ProDuctDetail/SodaChanh">Soda Chanh</a></li>
+                                    <li class="prod-name-list"><a href="~/ProDuctDetail/SuaTuoiTranChauDuongNau">Sữa Tươi Trân Châu Đường Nâu</a></li>
+                                    <li class="prod-name-list"><a href="~/ProDuctDetail/TraSuaTruyenThong">Trà Sữa Truyền Thống</a></li>
+                                    <li class="prod-name-list"><a href="~/ProDuctDetail/TraSuaTranChauTrang">Trà Sữa Trân Châu Trắng</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li><a href="~/Home/Recruit" class="menu3 nav-link">Tuyển dụng</a></li>
+                    <li class="dropdown-btn">
+                        <a href="~/Home/AboutUs" class="menu3 nav-link">Về chúng tôi</a>
+                        <ul class="dropdown dropdown-content-1">
+                            <li class="dropdown-content-list-1">
+                                <a href="~/Home/NguonGoc" class="content1 nav-link">Nguồn gốc</a>
+                            </li>
+                            <li class="dropdown-content-list-1">
+                                <a href="~/Home/DichVu" class="content1 nav-link">Dịch Vụ</a>
+                            </li>
+                            <li class="dropdown-content-list-1">
+                                <a href="~/Home/NgheNghiep" class="content1 nav-link">Nghề nghiệp</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li><a href="~/Home/Address" class="menu3 nav-link">Địa chỉ</a></li>
+                </ul>
+            </div>
+        </header>
+        <div>
+            @RenderBody()
+        </div>
+        <footer id="footer">
+            <div>
+                <img src="~/Content/images/fb-icon.png" class="fb-icon-image" />
+                <img src="~/Content/images/ins-icon.png" class="ins-icon-image" />
+                <img src="~/Content/images/tw-icon.png" class="tw-icon-image" />
+            </div>
+            <div>
+                <p>&copy;  2018 Baron Coffee.  Powered by Group Baron</p>
+            </div>
+            <div>
+                <img src="~/Content/images/phone-icon.png" class="phone-icon-image" />
+            </div>
+            <div>
+                <p>0245269466</p>
+            </div>
+            <div>
+                <img src="~/Content/images/email-icon.png" class="email-icon-image" />
+            </div>
+            <div>
+                <p>customerservice@Baroncoffee.com.vn</p>
+            </div>
+        </footer>
+    </div>
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>
