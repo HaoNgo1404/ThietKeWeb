@@ -145,7 +145,6 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
-    <Compile Include="Areas\Admin\Controllers\Admin_AccountController.cs" />
     <Compile Include="Areas\Admin\Controllers\Admin_CategoriesController.cs" />
     <Compile Include="Areas\Admin\Controllers\Admin_CustomersController.cs" />
     <Compile Include="Areas\Admin\Controllers\Admin_OrderDetailsController.cs" />
@@ -165,7 +164,7 @@
     <Compile Include="Models\Customer.cs">
       <DependentUpon>ThietKeWebModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\LoginVM.cs" />
+    <Compile Include="Models\View Model\LoginVM.cs" />
     <Compile Include="Models\Order.cs">
       <DependentUpon>ThietKeWebModel.tt</DependentUpon>
     </Compile>
@@ -175,8 +174,7 @@
     <Compile Include="Models\Product.cs">
       <DependentUpon>ThietKeWebModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\RegisterVM.cs" />
-    <Compile Include="Models\SizeVM.cs" />
+    <Compile Include="Models\View Model\RegisterVM.cs" />
     <Compile Include="Models\sysdiagram.cs">
       <DependentUpon>ThietKeWebModel.tt</DependentUpon>
     </Compile>
@@ -328,10 +326,6 @@
     <Content Include="Areas\Admin\Views\Admin_Orders\Edit.cshtml" />
     <Content Include="Areas\Admin\Views\Admin_Orders\Index.cshtml" />
     <Content Include="Areas\Admin\Views\Shared\_AdminLayout.cshtml" />
-    <Content Include="Areas\Admin\Views\Admin_Account\ProfileInfo.cshtml" />
-    <Content Include="Areas\Admin\Views\Admin_Account\ChangePassword.cshtml" />
-    <Content Include="Areas\Admin\Views\Admin_Account\Register.cshtml" />
-    <Content Include="Areas\Admin\Views\Admin_Account\Login.cshtml" />
     <None Include="Scripts\jquery-3.7.0.intellisense.js" />
     <Content Include="Scripts\jquery-3.7.0.js" />
     <Content Include="Scripts\jquery-3.7.0.min.js" />
