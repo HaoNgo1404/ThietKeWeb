@@ -1,6 +1,6 @@
 ﻿
 @{
-    Layout = null;
+    Layout = "~/Views/Shared/MasterLayout.cshtml";
 }
 
 <!DOCTYPE html>
@@ -29,70 +29,68 @@
         }
 
         body {
+            background-image: url('../../content/images/bgcf1.png');
+            background-size: cover; /* Ảnh nền phủ đầy toàn bộ */
             font-family: Arial, sans-serif;
-            font-size: 20px;
-            background-color: #f0f0f0;
             text-decoration: none;
         }
 
         .container {
             width: 100%;
             display: flex;
-            padding: 10px;
-            font-size: 30px;
+            padding: 20px;
+            font-size: 20px;
         }
-
+        
         .image {
+            background-image: url('../../content/images/cfbg1.png');
+            background-position: center center;
+            background-size: cover;
+            width: 300px;
+            height: 300px;
             display: block;
-            background-color: antiquewhite;
             border: hidden;
-            width: 550px;
-            height: 600px;
-            margin-left: 50px;
-            text-align: center;
-        }
-
-        form {
-            display: flex;
-        }
-
-        input {
-            margin-right: 15px;
+            margin-left: 20%;
         }
 
         .ProdInfo {
-            padding-left: 50px;
+            
+            padding-left: 20%;
+        }
+
+        label{
+            color: #FDFCE8;
+            text-align: center;
+            font-size: 30px;
         }
 
         .ProdType {
             padding-top: 20px;
+            color: #FDFCE8;
         }
 
         .ProdPrice {
-            color: green;
+            color: #B39977;
             padding-top: 10px;
         }
 
-        a {
-            width: 200px;
-            text-align: center;
-        }
-
         #button {
-            padding-top: 85px;
+            text-align: center;
+            padding-top: 10px;
         }
 
         .ProdDescription {
             clear: both;
             padding-top: 10px;
             padding-left: 10px;
+            color: #cbb37a;
         }
-
+        /*size*/
         button {
             padding: 10px 20px;
             font-size: 16px;
             color: black;
-            background-color: none;
+            background-color: #d5bc8b;
             border: 1px solid #cccc;
             border-radius: 5px;
             cursor: pointer;
@@ -101,45 +99,46 @@
         }
 
             button.selected {
-                background-color: forestgreen;
+                background-color: #9e774d;
             }
 
         .group {
             margin-bottom: 20px;
         }
+
+
     </style>
 </head>
-<body>
+<body> 
     <div class="container">
         <div class="image">
-            <img src="~/Content/images/sp1.png" width="500" height="500" style="margin-top:30px"/>
+                <img src="~/Content/images/sp1.png" width="300" height="300" style="margin-top:20px" />
         </div>
+
         <div class="ProdInfo">
-            <label>Cà Phê Đen</label>
+            <label><strong>Cà Phê Đen</strong></label>
             <p class="ProdPrice">20.000 VND</p>
+            <div class="ProdDescription">
+                <label><strong>Mô tả sản phẩm</strong></label>
+                <p>
+                    <small>
+                        Không ngọt ngào như Bạc sỉu hay Cà phê sữa, Cà phê đen mang trong mình phong vị trầm lắng, thi vị hơn.
+                        Người ta thường phải ngồi rất lâu mới cảm nhận được hết hương thơm ngào ngạt, phảng phất mùi cacao và cái đắng mượt mà trôi tuột xuống vòm họng.
+                    </small>
+                </p>
+            </div>
             <p class="ProdType">Chọn size (bắt buộc)</p>
             <div class="group">
                 <button class="optionButton" data-group="1" onclick="selectOption(this)">Nhỏ + 0 đ</button>
                 <button class="optionButton" data-group="1" onclick="selectOption(this)">Vừa + 10.000 đ</button>
                 <button class="optionButton" data-group="1" onclick="selectOption(this)">Lớn + 16.000 đ</button>
             </div>
-            <p class="ProdType">Topping</p>
-            <div class="group">
-                <button class="optionButton" data-group="2" onclick="selectOption(this)">Sốt Caramel + 10.000 đ</button>
-                <button class="optionButton" data-group="2" onclick="selectOption(this)">Shot Expresso + 10.000 đ</button>
-                <button class="optionButton" data-group="2" onclick="selectOption(this)">Trân Châu Trắng + 10.000 đ</button>
-            </div>
+
             <div id="button">
-                <a href="~/Home/Index" class="btn btn-success">Đặt mua hàng</a>
+                <a href="~/Home/Index" class="btn btn-warning">Đặt mua hàng</a>
             </div>
         </div>
     </div>
-    <div class="ProdDescription">
-        <label>Mô tả sản phẩm</label>
-        <p>
-            Không ngọt ngào như Bạc sỉu hay Cà phê sữa, Cà phê đen mang trong mình phong vị trầm lắng, thi vị hơn.
-            Người ta thường phải ngồi rất lâu mới cảm nhận được hết hương thơm ngào ngạt, phảng phất mùi cacao và cái đắng mượt mà trôi tuột xuống vòm họng.
-        </p>
-    </div>
+    
 </body>
 </html>
