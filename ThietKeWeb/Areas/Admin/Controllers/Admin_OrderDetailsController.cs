@@ -12,7 +12,7 @@ namespace ThietKeWeb.Areas.Admin.Controllers
 {
     public class Admin_OrderDetailsController : Controller
     {
-        private ThietKeWebEntities db = new ThietKeWebEntities();
+        private MyStoreEntities db = new MyStoreEntities();
 
         // GET: Admin/Admin_OrderDetails
         public ActionResult Index()

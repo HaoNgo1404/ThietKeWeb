@@ -1,0 +1,59 @@
+﻿@model ThietKeWeb.Models.Cart
+
+@{
+    ViewBag.Title = "ShowCart";
+    Layout = "~/Views/Shared/MasterLayout.cshtml";
+}
+
+<h2>Giỏ Hàng</h2>
+<a href="@Url.Action("Index", "Home")"> Tiếp tục Mua hàng</a>
+@if (Model != null)
+{
+    <table class="table-bordered">
+        <thead style="text-align:center; font-size:large;">
+            <tr>
+                <th>Tên Sản phẩm</th>
+                <th>Hình</th>
+                <th>Giá</th>
+                <th>Số lượng</th>
+                <th>Thành tiền</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model.Items)
+            {
+                decimal total = item._quantity * (decimal)item._product.ProductPrice;
+                <tr>
+                    <td width="400">@Html.DisplayFor(model => item._product.ProductName)</td>
+                    <td><img src="~/Content/images/@item._product.ProductImage" width="100" height="110" /></td>
+                    <td width="100" align="right"> @Html.DisplayFor(model => item._product.ProductPrice)</td>
+                    <td align="right">
+                        @using (Html.BeginForm("Update_Cart_Quantity", "ShoppingCart"))
+                        {
+                            <input type="hidden" value="@item._product.ProductID" name="idPro" />
+                            <input type="number" value="@item._quantity" name="carQuantity" style="text-align:right" />
+                            <input type="submit" value="Cập nhật" />
+                        }
+                    </td>
+                    <td width="100" align="right">@total.ToString("#,##0").Replace(',', '.')</td>
+                    <td>
+                        <a href="ShoppingCart/RemoveCart/@item._product.ProductID" class="btn-danger">- Xóa -</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+        <tfoot>
+            <tr>
+                <td colspan="5" style="text-align:right; font-size:x-large; color: crimson;">
+                    Tổng tiền : @Model.Total_money().ToString("#,##0").Replace(',', '.') Đồng
+                </td>
+            </tr>
+        </tfoot>
+    </table>
+}
+else
+{
+    <h4>Giỏ hàng rỗng ! Xin mời tiếp tục mua hàng</h4>
+}
+
+

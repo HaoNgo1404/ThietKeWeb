@@ -13,10 +13,10 @@ namespace ThietKeWeb.Models
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class ThietKeWebEntities : DbContext
+    public partial class MyStoreEntities : DbContext
     {
-        public ThietKeWebEntities()
-            : base("name=ThietKeWebEntities")
+        public MyStoreEntities()
+            : base("name=MyStoreEntities")
         {
         }
     

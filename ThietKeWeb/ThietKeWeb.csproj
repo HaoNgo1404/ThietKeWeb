@@ -139,44 +139,46 @@
     <Compile Include="Areas\Admin\Controllers\TrangChuController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ProDuctDetailController.cs" />
+    <Compile Include="Controllers\ShoppingCartController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\Cart.cs" />
     <Compile Include="Models\Category.cs">
-      <DependentUpon>ThietKeWebModel.tt</DependentUpon>
+      <DependentUpon>MyStoreModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Customer.cs">
-      <DependentUpon>ThietKeWebModel.tt</DependentUpon>
+      <DependentUpon>MyStoreModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MyStoreModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MyStoreModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MyStoreModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MyStoreModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MyStoreModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MyStoreModel.edmx</DependentUpon>
     </Compile>
     <Compile Include="Models\Order.cs">
-      <DependentUpon>ThietKeWebModel.tt</DependentUpon>
+      <DependentUpon>MyStoreModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\OrderDetail.cs">
-      <DependentUpon>ThietKeWebModel.tt</DependentUpon>
+      <DependentUpon>MyStoreModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Product.cs">
-      <DependentUpon>ThietKeWebModel.tt</DependentUpon>
+      <DependentUpon>MyStoreModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\sysdiagram.cs">
-      <DependentUpon>ThietKeWebModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\ThietKeWebModel.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>ThietKeWebModel.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\ThietKeWebModel.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>ThietKeWebModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\ThietKeWebModel.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>ThietKeWebModel.edmx</DependentUpon>
+      <DependentUpon>MyStoreModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\User.cs">
-      <DependentUpon>ThietKeWebModel.tt</DependentUpon>
+      <DependentUpon>MyStoreModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -252,15 +254,15 @@
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
-    <Content Include="Models\ThietKeWebModel.Context.tt">
+    <Content Include="Models\MyStoreModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>ThietKeWebModel.Context.cs</LastGenOutput>
-      <DependentUpon>ThietKeWebModel.edmx</DependentUpon>
+      <DependentUpon>MyStoreModel.edmx</DependentUpon>
+      <LastGenOutput>MyStoreModel.Context.cs</LastGenOutput>
     </Content>
-    <Content Include="Models\ThietKeWebModel.tt">
+    <Content Include="Models\MyStoreModel.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>ThietKeWebModel.edmx</DependentUpon>
-      <LastGenOutput>ThietKeWebModel.cs</LastGenOutput>
+      <DependentUpon>MyStoreModel.edmx</DependentUpon>
+      <LastGenOutput>MyStoreModel.cs</LastGenOutput>
     </Content>
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
@@ -268,13 +270,6 @@
     <Content Include="Scripts\bootstrap.esm.min.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
-    <EntityDeploy Include="Models\ThietKeWebModel.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>ThietKeWebModel.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-    <Content Include="Models\ThietKeWebModel.edmx.diagram">
-      <DependentUpon>ThietKeWebModel.edmx</DependentUpon>
-    </Content>
     <Content Include="Areas\Admin\Views\web.config" />
     <Content Include="Areas\Admin\Views\Shared\AdminLayout.cshtml" />
     <Content Include="Areas\Admin\Views\TrangChu\Index.cshtml" />
@@ -310,6 +305,13 @@
     <Content Include="Areas\Admin\Views\Admin_Orders\Details.cshtml" />
     <Content Include="Areas\Admin\Views\Admin_Orders\Edit.cshtml" />
     <Content Include="Areas\Admin\Views\Admin_Orders\Index.cshtml" />
+    <EntityDeploy Include="Models\MyStoreModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>MyStoreModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\MyStoreModel.edmx.diagram">
+      <DependentUpon>MyStoreModel.edmx</DependentUpon>
+    </Content>
     <None Include="Scripts\jquery-3.7.0.intellisense.js" />
     <Content Include="Scripts\jquery-3.7.0.js" />
     <Content Include="Scripts\jquery-3.7.0.min.js" />
@@ -374,6 +376,7 @@
     <Content Include="Views\Home\Khac.cshtml" />
     <Content Include="Views\Home\AboutUs.cshtml" />
     <Content Include="Views\Home\NguonGoc.cshtml" />
+    <Content Include="Views\ShoppingCart\ShowCart.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
