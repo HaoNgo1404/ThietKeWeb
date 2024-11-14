@@ -1,91 +1,147 @@
 ﻿
 @{
     ViewBag.Title = "Index";
-    Layout = "~/Views/Shared/MasterLayout.cshtml";
+    Layout = "~/Views/Shared/_MasterLayout.cshtml";
 }
+<style>
+    .News {
+        background-color: #D9D9D9;
+        width: fit-content;
+        height: fit-content;
+        border-radius: 12px;
+        margin-top: 10px;
+        margin-bottom: 15px;
+        text-align: center;
+        padding: 20px 50px;
+        display: flex;
+        vertical-align: central;
+        justify-content: space-around;
+    }
+
+    .News-text {
+        text-align: left;
+        padding-right: 20px;
+        margin-top: 2%;
+    }
+
+    .News p {
+        margin: 0;
+        font-size: 45px;
+    }
+
+    .News-img {
+        display: flex;
+        gap: 20px;
+    }
+
+    .News-img-item {
+        width: fit-content;
+        height: fit-content;
+    }
+
+    .News-img img {
+        width: 200px;
+        height: 200px;
+        object-fit: cover;
+    }
+
+    .News-img1 {
+        border-left: 1px solid black;
+        padding-left: 20px;
+    }
+
+    .TinTuc {
+        margin-left: 15%;
+        align-items: center;
+    }
+</style>
 
 <div>
     <section>
-        <img src="~/Content/images/banner9.png" class="image1" />
+       
         <img src="~/Content/images/banner8.png" class="image2" />
-
     </section>
-    <section id="featureProd">
-        <div class="prod-list">
-            <h2>Các thức uống phổ biến hiện nay</h2>
+    @*tin tuc khuyen mai*@
+    <section class="TinTuc">
+        <div class="News">
+            <div class="News-text">
+                <p>TIN TỨC <span style="color: #4B7864">&</span> </p>
+                <p>KHUYẾN MÃI</p>
+            </div>
+
+            <div class="News-img">
+
+                <span class="News-img-item">
+                    <img src="~/Content/images/s1.jpg" class="News-img1" />
+                </span>
+                <span class="News-img-item">
+                    <img src="~/Content/images/s2.jpg" class="News-img2" />
+                </span>
+                <span class="News-img-item">
+                    <img src="~/Content/images/images.jpeg" class="News-img2" />
+                </span>
+
+            </div>
+
         </div>
-        <div class="prod-container-2">
+    </section>
+    @*   BEST SELLER     *@
+    <section id="featureProd">
+
+        <div class="prod-list">
+            <h2>Sản phẩm bán chạy</h2>
+        </div>
+
+        <div class="List_BestSeller_Prod">
+            @*san pham 1*@
             <div class="prod">
                 <a href="~/ProDuctDetail/CaPheDen">
-                    <img src="~/Content/images/sp1.png" class="prod-item-special2" />
+                    <img src="~/Content/ảnh sp lần 2/Thiết kế chưa có tên (1).png" class="prod-box" />
                     <h3>Cà phê đen</h3>
+
+                    <p class="prod-price">20.000 VND</p>
+                </a>
+            </div>
+            @*san pham 2*@
+            <div class="prod">
+                <a href="~/ProDuctDetail/CaPheDen">
+                    <img src="~/Content/ảnh sp lần 2/Thiết kế chưa có tên (1).png" class="prod-box" />
+                    <h3>Cà phê đen</h3>
+
                     <p class="prod-price">20.000 VND</p>
                 </a>
             </div>
 
+            @*san pham 3*@
             <div class="prod">
-                <a href="~/ProDuctDetail/BacSiu">
-                    <img src="~/Content/images/sp3.png" class="prod-item-special2" />
-                    <h3>Bạc Sỉu</h3>
+                <a href="~/ProDuctDetail/CaPheDen">
+                    <img src="~/Content/ảnh sp lần 2/Thiết kế chưa có tên (1).png" class="prod-box" />
+                    <h3>Cà phê đen</h3>
+
                     <p class="prod-price">20.000 VND</p>
                 </a>
             </div>
+
+            @*san pham 4*@
             <div class="prod">
-                <a href="~/ProDuctDetail/SodaChanh">
-                    <img src="~/Content/images/sp6.png" class="prod-item-special2" />
-                    <h3>Soda Chanh</h3>
-                    <p class="prod-price">25.000 VND</p>
-                </a>
-            </div>
-            <div class="prod">
-                <a href="~/ProDuctDetail/CapheCaramel">
-                    <img src="~/Content/images/sp7.png" class="prod-item-special5" />
-                    <h3>Cà Phê Caramel</h3>
+                <a href="~/ProDuctDetail/CaPheDen">
+                    <img src="~/Content/ảnh sp lần 2/Thiết kế chưa có tên (1).png" class="prod-box" />
+                    <h3>Cà phê đen</h3>
+
                     <p class="prod-price">20.000 VND</p>
                 </a>
             </div>
+
+            @*san pham 5*@
             <div class="prod">
-                <a href="~/ProDuctDetail/TraNho">
-                    <img src="~/Content/images/sp9.png" class="prod-item-special2" />
-                    <h3>Trà Nho</h3>
-                    <p class="prod-price">35.000 VND</p>
+                <a href="~/ProDuctDetail/CaPheDen">
+                    <img src="~/Content/ảnh sp lần 2/Thiết kế chưa có tên (1).png" class="prod-box" />
+                    <h3>Cà phê đen</h3>
+
+                    <p class="prod-price">20.000 VND</p>
                 </a>
             </div>
-            <div class="prod">
-                <a href="~/ProDuctDetail/SocolaDaXay">
-                    <img src="~/Content/images/sp12.png" class="prod-item-special2" />
-                    <h3>Socola Đá Xay</h3>
-                    <p class="prod-price">35.000 VND</p>
-                </a>
-            </div>
-            <div class="prod">
-                <a href="~/ProDuctDetail/DauDaXay">
-                    <img src="~/Content/images/sp14.png" class="prod-item-special3" />
-                    <h3>Dâu Đá Xay</h3>
-                    <p class="prod-price">30.000 VND</p>
-                </a>
-            </div>
-            <div class="prod">
-                <a href="~/ProDuctDetail/MatchaSocolaDaXay">
-                    <img src="~/Content/images/sp15.png" class="prod-item-special2" />
-                    <h3>Matcha Socola Đá Xay</h3>
-                    <p class="prod-price">25.000 VND</p>
-                </a>
-            </div>
-            <div class="prod">
-                <a href="~/ProDuctDetail/TraVai">
-                    <img src="~/Content/images/sp18.png" class="prod-item-special1" />
-                    <h3>Trà Vải</h3>
-                    <p class="prod-price">35.000 VND</p>
-                </a>
-            </div>
-            <div class="prod">
-                <a href="~/ProDuctDetail/TraDen">
-                    <img src="~/Content/images/sp20.png" class="prod-item-special2" />
-                    <h3>Trà Đen</h3>
-                    <p class="prod-price">25.000 VND</p>
-                </a>
-            </div>
+            
         </div>
     </section>
 </div>

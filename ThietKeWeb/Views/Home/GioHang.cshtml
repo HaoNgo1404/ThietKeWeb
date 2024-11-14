@@ -1,7 +1,8 @@
 ﻿@{
     ViewBag.Title = "GioHang";
-    Layout = "~/Views/Shared/MasterLayout.cshtml";
+    Layout = "~/Views/Shared/_MasterLayout.cshtml";
 }
+<link rel="stylesheet" href="~/Content/Layout.css" />
 <style type="text/css">
     body {
         text-align: center;
@@ -154,68 +155,41 @@
 
 <h1>Giỏ Hàng</h1>
 <table class="table table-bordered" width="1000" height="100">
-    <thead>
-        <tr>
-            <th>Hình Ảnh</th>
-            <th>Tên Sản Phẩm</th>
-            <th>Giá tiền</th>
-            <th>Số Lượng</th>
-            <th>Thành Tiền</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td><img src="~/Content/images/sp1.png" /></td>
-            <td>Cà phê đen</td>
-            <td>
-                <input type="text" id="iPrice1" name="Price" value="20000" readonly class="no-border" />
-            </td>
-            <td>
-                <input type="number" id="iQuantity1" name="Quantity" value="0" min="0" max="15" oninput="CalculateTotal();" />
-            </td>
-            <td>
-                <label id="lbTotal1"></label>
-            </td>
-        </tr>
-        <tr>
-            <td><img src="~/Content/images/sp3.png" /></td>
-            <td>Bạc Sỉu</td>
-            <td>
-                <input type="text" id="iPrice2" name="Price" value="20000" readonly class="no-border" />
-            </td>
-            <td>
-                <input type="number" id="iQuantity2" name="Quantity" value="0" min="0" max="15" oninput="CalculateTotal();" />
-            </td>
-            <td>
-                <label id="lbTotal2"></label>
-            </td>
-        </tr>
-    </tbody>
-    <!-- Hàng Tổng tiền -->
-    <tfoot>
-        <tr>
-            <td colspan="4" style="text-align: right; font-weight: bold;">Tổng tiền:</td>
-            <td><label id="grandTotal">0</label></td>
-        </tr>
-        <tr>
-            <td colspan="4" style="text-align: right; font-weight: bold;">Tổng số lượng sản phẩm:</td>
-            <td><label id="totalQuantity">0</label></td>
-        </tr>
-        <tr>
-            <td colspan="5" style="text-align: left;">
-                <label for="address">Địa chỉ:</label>
-                <input type="text" id="address" placeholder="Nhập địa chỉ của bạn" style="width: 80%;" />
-            </td>
-        </tr>
-        <tr>
-            <td colspan="5" style="text-align: left;">
-                <label for="phone">Số điện thoại:</label>
-                <input type="text" id="phone" placeholder="Nhập số điện thoại của bạn" style="width: 80%;" />
-            </td>
-        </tr>
-    </tfoot>
-
-
+    <tr>
+        <th>Hình Ảnh</th>
+        <th>Tên Sản Phẩm</th>
+        <th>Giá tiền</th>
+        <th>Số Lượng</th>
+        <th>Thành Tiền</th>
+    </tr>
+    <tr>
+        <td><img src="~/Content/images/sp1.png" /></td>
+        <td>Cà phê đen</td>
+        <td>
+            <input type="text" id="iPrice1" name="Price" value="20000" readonly class="no-border" />
+        </td>
+        <td>
+            <input type="number" id="iQuantity1" name="Quantity" value="0" min="0" max="15"
+                   oninput="CalculateTotal();" />
+        </td>
+        <td>
+            <label id="lbTotal1"></label>
+        </td>
+    </tr>
+    <tr>
+        <td><img src="~/Content/images/sp3.png" /></td>
+        <td>Bạc Sỉu</td>
+        <td>
+            <input type="text" id="iPrice2" name="Price" value="20000" readonly class="no-border" />
+        </td>
+        <td>
+            <input type="number" id="iQuantity2" name="Quantity" value="0" min="0" max="15"
+                   oninput="CalculateTotal();" />
+        </td>
+        <td>
+            <label id="lbTotal2"></label>
+        </td>
+    </tr>
 </table>
 <div class="button">
     <button type="submit" class="btn btn-success" onclick="ConfirmPayment()">Thanh toán</button> |

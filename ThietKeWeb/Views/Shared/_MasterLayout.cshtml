@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width,initial-scale=" 1.0"" />
+    <title>@ViewBag.Title</title>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+    <style type="text/css">
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            font-size: 20px;
+            font-weight: bold;
+            background-color: #FFFF;
+            text-decoration: none;
+            max-width: 1920px;
+        }
+
+        li {
+            list-style-type: none;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        .header {
+            width: 100%;
+            background-color: #4B7864;
+            align-items: center;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        /*top head*/
+        .top-head {
+            width: 80%;
+            background-color: #FAF0E7;
+            border-radius: 16px;
+            justify-content: space-around;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+
+            .top-head a {
+                width: 18%;
+                height: auto;
+            }
+
+        .logo {
+            width: 100%;
+            height: auto;
+        }
+
+        .head-middle {
+            position: relative;
+        }
+
+        .top-head input {
+            max-width: 5000px;
+        }
+
+        .search {
+            margin-left: 5vw;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            width: 450px;
+            padding: 6px;
+            outline: none;
+        }
+
+        .search-button {
+            position: absolute;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            border: none;
+            cursor: pointer;
+            width: 70px;
+            height: 35px;
+            border-radius: 8px;
+            padding-top: 4px;
+            background: none;
+        }
+
+        .search-image {
+            width: 70px;
+            height: 29px;
+            border-radius: 8px;
+        }
+        /*icon mua hàng*/
+        .cart {
+            position: relative;
+        }
+
+        .cart-count {
+            position: absolute;
+            right: -17px;
+            top: -2px;
+            background-color: red;
+            color: white;
+            border-radius: 45%;
+            padding: 3px;
+            font-size: 14px;
+        }
+
+        .menu {
+            display: flex;
+        }
+
+            .menu a {
+                color: white;
+                font-size: 18px;
+            }
+
+        #selection {
+            margin-right: 35px;
+            color: black;
+        }
+
+        .selection-image {
+            width: 20px;
+            height: 20px;
+            margin-right: 4px;
+        }
+        /*thanh menu*/
+        .list-background {
+            width: 100%;
+            height: fit-content;
+            margin-top: 8px;
+            padding: 0;
+        }
+
+        .list {
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+        }
+
+            .list li a {
+                width: fit-content;
+            }
+
+        /* thanh menu */
+        .menu1 {
+            font-size: 20px;
+            color: white;
+            display: inline-block;
+            block-size: 35px;
+            text-decoration: none;
+            padding: 10px;
+            width: fit-content;
+        }
+
+            .menu1:hover {
+                color: white;
+                display: inline-block;
+                text-decoration: none;
+                padding: 10px;
+                background-color: #53382C;
+                width: fit-content;
+                border-radius: 8px;
+            }
+
+        /*thành phần trong thanh menu : trang chủ, thực đơn,...*/
+
+
+        /*-------------------------------------------- body trang home ------------------------------------------------------------------*/
+
+
+        .image2 {
+            display: block;
+            width: 100%;
+            height: 50%;
+            padding: 20px 0px;
+            border-radius: 2px;
+        }
+
+        .ad {
+            clear: both;
+            display: flex;
+            align-items: center;
+        }
+
+
+
+
+        .prod-name {
+            display: flow;
+            padding-top: 4px;
+        }
+
+        .prod-name-list {
+            text-align: center;
+            text-decoration: none;
+        }
+
+        .prod-name a {
+            color: white;
+            position: relative;
+            text-decoration: none;
+            transition: all 0.2s ease;
+        }
+
+        .prod-name li a:hover {
+            color: lightpink;
+        }
+
+        .prod-name li a::after {
+            position: absolute;
+            content: '\203A';
+            left: -50px;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .prod-name li a:hover::after {
+            opacity: 1;
+        }
+        /*-------------------------------------content : trang home----------------------------------------------- */
+        #featureProd {
+            text-align: center;
+            padding: 10px;
+        }
+
+        .prod-list {
+            width: 100%;
+            background-color: #4B7864;
+            height: fit-content;
+            margin-bottom: 20px;
+            width: 100%;
+        }
+
+        h2 {
+            font-size: 20px;
+            vertical-align: middle;
+            font-style: italic;
+            color: white;
+            font-weight: bold;
+            padding: 5px;
+        }
+
+        .prod-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: auto;
+        }
+        /*khối sản phẩm bán chạy */
+        .List_BestSeller_Prod {
+            display: flex;
+            flex-grow: 1;
+            align-items: center;
+            overflow: auto;
+            white-space: nowrap;
+            padding: 10px;
+            justify-content: space-evenly;
+        }
+        /*khung từng sản phẩm*/
+        .prod {
+            width: fit-content;
+            padding: 10px;
+            background-color: #EFEDED;
+            border-radius: 12px;
+        }
+
+        .prod-item {
+            width: 100%;
+            height: 150px;
+            transition: transform 0.2s ease;
+        }
+
+            .prod-item:hover {
+                transform: translateY(-5px);
+            }
+
+        .prod-item-special1 {
+            width: 100px;
+            height: 150px;
+            transition: transform 0.2s ease;
+        }
+
+            .prod-item-special1:hover {
+                transform: translateY(-5px);
+            }
+
+        .prod-box {
+            /*            width: 150px;
+            height: 150px;*/
+            border-radius: 12px;
+            transition: transform 0.2s ease;
+        }
+        /*animation hover*/
+        .prod:hover {
+            transform: translateY(-3px);
+            box-shadow: 2px 2px 18px grey;
+            padding: 10px;
+        }
+
+
+        /*tên sản phẩm*/
+        h3 {
+            font-size: 16px;
+            color: black;
+            font-weight: bold;
+            padding: 3px;
+            font-style: italic;
+            margin: 0;
+        }
+
+
+
+        .prod-price {
+            font-size: 12px;
+            color: green;
+            margin: 0;
+        }
+        /*------------------------------------------------------footer------------------------------------------------------------------*/
+        #footer {
+            background-color: #b5b4b4;
+            color: #4B7864;
+            clear: both;
+            display: flex;
+            flex-direction: row;
+            padding: 10px;
+            gap: 80px;
+            height: fit-content;
+        }
+
+            #footer img {
+                width: 45px;
+                height: 45px;
+            }
+
+        .Team-introduce {
+            display: flex;
+            flex-direction: column;
+        }
+
+            .Team-introduce p {
+                margin: 0px;
+                font-size: 15px;
+            }
+
+        .Team-name {
+            color: black;
+            font: 50 18px Inter,;
+        }
+    </style>
+</head>
+<body>
+    @* header *@
+    <header class="header">
+        <div class="top-head">
+
+            <a href="~/Home/Index"><img src="~/Content/images/logo1.png" class="logo" /></a>
+
+            <div class="head-middle">
+
+                <input type="text" class="search" placeholder="Mời nhập nước uống bạn muốn" />
+                <button type="button" class="search-button">
+                    <img src="~/Content/images/search-icon.JPG" class="search-image" />
+                </button>
+            </div>
+
+            <ul class="menu">
+                <li>
+                    <a href="~/Home/GioHang" id="selection" class="cart">
+                        <img src="~/Content/images/Shopping-cart-icon.png" class="selection-image" />Giỏ hàng
+                        <span class="cart-count">0</span>
+                    </a>
+                </li>
+                @*--------------------------------------------------------------------login--------------------------------*@
+                <li class="dropdown">
+                    @if (Session["Username"] != null)
+                    {
+                        <a href="#" data-toggle="dropdown" class="dropdown-toggle" id="selection"><img src="~/Content/images/Character-icon.png" class="selection-image" />@Session["Username"]</a>
+                        <div class="dropdown-menu">
+                            @Html.ActionLink("Thông tin tài khoản", "ProfileInfo", "Account", new { area = "" }, new { @class = "dropdown-item", @style = "color: black" })
+                            @Html.ActionLink("Đổi mật khẩu", "ChangePassword", "Account", new { area = "" }, new { @class = "dropdown-item", @style = "color: black" })
+                            <div class="dropdown-divider"></div>
+                            @Html.ActionLink("Đăng xuất", "Logout", "Account", new { area = "" }, new { @class = "dropdown-item", @style = "color: black" })
+                        </div>
+                    }
+                    else
+                    {
+                        <a href="#" data-toggle="dropdown" class="dropdown-toggle" id="selection"><img src="~/Content/images/Character-icon.png" class="selection-image" />Tài khoản</a>
+                        <div class="dropdown-menu">
+                            @Html.ActionLink("Đăng nhập", "Login", "Account", new { area = "" }, new { @class = "dropdown-item", @style = "color: black" })
+                            @Html.ActionLink("Đăng ký", "Register", "Account", new { area = "" }, new { @class = "dropdown-item", @style = "color: black" })
+                        </div>
+                    }
+                </li>
+            </ul>
+
+        </div>
+
+        @*--------------------------- thanh menu ---------------------------*@
+        <div class="list-background">
+
+            <ul class="list">
+
+                <li><a href="~/Home/Index" class="menu1">Trang chủ</a></li>
+                @*phần mục lục của thực đơn // chưa gắn link cho category *@
+                <li class="dropdown-btn">
+                    <a href="~/Home/ProDuctDetail" class="menu1">Thực đơn</a>                  
+                </li>
+
+                <li><a href="~/Home/Recruit" class="menu1">Tuyển dụng</a></li>
+                <li class="dropdown-btn">
+                    <a href="~/Home/About us" class="menu1">Về chúng tôi</a>                  
+                </li>
+                <li><a href="~/Home/Address" class="menu1">Địa chỉ</a></li>
+            </ul>
+        </div>
+    </header>
+    <div>
+        @RenderBody()
+    </div>
+    <footer id="footer">
+        <div class="contact-icons">
+            <img src="~/Content/images/fb-icon.png" class="fb-icon-image" />
+            <img src="~/Content/images/ins-icon.png" class="ins-icon-image" />
+            <img src="~/Content/images/tw-icon.png" class="tw-icon-image" />
+        </div>
+        <div class="Team-introduce">
+            <p>&copy; @DateTime.Now.Year - Email: BaronCafe@gmail.com.vn</p>
+            <p class="Team-name">Ngô Quang Hào - Bạch Thị Thủy Triều - Huỳnh Thiện Tấn - Tạ Yến Phương</p>
+        </div>
+
+
+
+
+    </footer>
+    
+</body>
+</html>

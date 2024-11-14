@@ -6,8 +6,13 @@ using System.Web.Mvc;
 
 namespace ThietKeWeb.Controllers
 {
+    [OverrideAuthentication]
     public class HomeController : Controller
     {
+        public ActionResult Index()
+        {
+            return View();
+        }
         public ActionResult NguonGoc()
         {
             return View();
@@ -17,10 +22,6 @@ namespace ThietKeWeb.Controllers
             return View();
         }
         public ActionResult NgheNghiep()
-        {
-            return View();
-        }
-        public ActionResult Index()
         {
             return View();
         }
@@ -45,10 +46,6 @@ namespace ThietKeWeb.Controllers
             return View();
         }
         public ActionResult Khac()
-        {
-            return View();
-        }
-        public ActionResult Favourite()
         {
             return View();
         }

@@ -71,7 +71,7 @@
           </Key>
           <Property Name="Username" Type="nvarchar" MaxLength="255" Nullable="false" />
           <Property Name="Password" Type="nchar" MaxLength="50" Nullable="false" />
-          <Property Name="UserRole" Type="nchar" MaxLength="1" Nullable="false" />
+          <Property Name="UserRole" Type="nchar" MaxLength="10" Nullable="false" />
         </EntityType>
         <Association Name="FK__Order__CustomerI__412EB0B6">
           <End Role="Customer" Type="Self.Customer" Multiplicity="1" />
@@ -242,7 +242,7 @@
           </Key>
           <Property Name="Username" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="Password" Type="String" MaxLength="50" FixedLength="true" Unicode="true" Nullable="false" />
-          <Property Name="UserRole" Type="String" MaxLength="1" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="UserRole" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
           <NavigationProperty Name="Customers" Relationship="Self.FK_User_Customer" FromRole="User" ToRole="Customer" />
         </EntityType>
         <Association Name="FK_Pro_Category">
