@@ -1,0 +1,31 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web.Mvc;
+using PagedList.Mvc;
+namespace TaYenPhuong_BE.Models.ViewModel
+{
+    public class HomeProduct__2VM
+    {
+        public string SearchTerm { get; set; }
+
+        public int PageNumber { get; set; }
+        public int PageSize { get; set; } = 5;
+
+
+        //public List<Product> FeaturedProducts { get; set; }
+
+
+
+        public PagedList.IPagedList<Product> Products { get; set; }
+
+        public List<Product> FeaturedProducts { get; set; }
+
+        //public List<SelectListItem> DropdownItems { get; set; }
+
+        // Selected value from the dropdown
+        //public string SelectedDropdownValue { get; set; }
+
+        public List<Category> Categories { get; set; }
+    }
+}
