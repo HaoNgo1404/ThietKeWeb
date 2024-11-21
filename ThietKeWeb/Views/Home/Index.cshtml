@@ -1,8 +1,11 @@
-﻿
+@model TaYenPhuong_BE.Models.ViewModel.HomeProduct__2VM
+
 @{
     ViewBag.Title = "Index";
-    Layout = "~/Views/Shared/_MasterLayout.cshtml";
+    Layout = "~/Views/Shared/_LayoutPage1.cshtml";
 }
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
 <style>
     .News {
         background-color: #D9D9D9;
@@ -56,9 +59,11 @@
     }
 </style>
 
+
 <div>
+
     <section>
-       
+
         <img src="~/Content/images/banner8.png" class="image2" />
     </section>
     @*tin tuc khuyen mai*@
@@ -84,64 +89,13 @@
             </div>
 
         </div>
+
     </section>
-    @*   BEST SELLER     *@
-    <section id="featureProd">
 
-        <div class="prod-list">
-            <h2>Sản phẩm bán chạy</h2>
-        </div>
+    @Html.Partial("PVListProduct", Model) @* sản phẩm tìm kiếm *@
 
-        <div class="List_BestSeller_Prod">
-            @*san pham 1*@
-            <div class="prod">
-                <a href="~/ProDuctDetail/CaPheDen">
-                    <img src="~/Content/ảnh sp lần 2/Thiết kế chưa có tên (1).png" class="prod-box" />
-                    <h3>Cà phê đen</h3>
+    @Html.Partial("PVFeaturedProducts", Model)
 
-                    <p class="prod-price">20.000 VND</p>
-                </a>
-            </div>
-            @*san pham 2*@
-            <div class="prod">
-                <a href="~/ProDuctDetail/CaPheDen">
-                    <img src="~/Content/ảnh sp lần 2/Thiết kế chưa có tên (1).png" class="prod-box" />
-                    <h3>Cà phê đen</h3>
-
-                    <p class="prod-price">20.000 VND</p>
-                </a>
-            </div>
-
-            @*san pham 3*@
-            <div class="prod">
-                <a href="~/ProDuctDetail/CaPheDen">
-                    <img src="~/Content/ảnh sp lần 2/Thiết kế chưa có tên (1).png" class="prod-box" />
-                    <h3>Cà phê đen</h3>
-
-                    <p class="prod-price">20.000 VND</p>
-                </a>
-            </div>
-
-            @*san pham 4*@
-            <div class="prod">
-                <a href="~/ProDuctDetail/CaPheDen">
-                    <img src="~/Content/ảnh sp lần 2/Thiết kế chưa có tên (1).png" class="prod-box" />
-                    <h3>Cà phê đen</h3>
-
-                    <p class="prod-price">20.000 VND</p>
-                </a>
-            </div>
-
-            @*san pham 5*@
-            <div class="prod">
-                <a href="~/ProDuctDetail/CaPheDen">
-                    <img src="~/Content/ảnh sp lần 2/Thiết kế chưa có tên (1).png" class="prod-box" />
-                    <h3>Cà phê đen</h3>
-
-                    <p class="prod-price">20.000 VND</p>
-                </a>
-            </div>
-            
-        </div>
-    </section>
+  
 </div>
+@**@
