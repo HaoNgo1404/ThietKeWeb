@@ -9,10 +9,40 @@ namespace ThietKeWeb.Controllers
     [OverrideAuthentication]
     public class HomeController : Controller
     {
-        public ActionResult Index()
-        {
-            return View();
-        }
+      private MyStoreEntities db = new MyStoreEntities();
+
+         public ActionResult Index(string SearchTerm, int? page)
+ {
+     var model = new HomeProduct__2VM();
+     var products = db.Products.AsQueryable();
+     if (!string.IsNullOrEmpty(SearchTerm))
+     {
+         model.SearchTerm = SearchTerm;
+         products = products.Where(p => p.ProductName.Contains(SearchTerm) ||
+                                  p.ProductDescription.Contains(SearchTerm) ||
+                                  p.Category.CategoryName.Contains(SearchTerm));
+
+
+         int pageNumer = page ?? 1;
+         int pageSize = 2;
+
+
+         model.Products = products.OrderByDescending(p => p.OrderDetails.Count()).Take(5).ToPagedList(pageNumer, pageSize);
+     }
+
+     //int pageNumer1 = page ?? 1;
+     //int pageSize1 = 5;
+
+
+     //model.Products = products.OrderByDescending(p => p.OrderDetails.Count()).Take(5).ToPagedList(pageNumer1, pageSize1);// lỗi vì dùng [products] -> sản phẩm lọc bởi tìm kiếm
+
+     model.FeaturedProducts = db.Products.OrderByDescending(p => p.OrderDetails.Count()).Take(5).ToList();
+
+     model.Categories = db.Categories.ToList();
+    
+     return View(model);
+
+ }
         public ActionResult NguonGoc()
         {
             return View();
