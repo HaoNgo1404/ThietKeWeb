@@ -1,0 +1,58 @@
+@model TaYenPhuong_BE.Models.ViewModel.HomeProduct__2VM
+<style>
+    .BoxProdSearch {
+        height: auto;
+        padding: 10px;
+    }
+
+    .ListProdSearch {
+        display: flex;             /*giúp các sản phẩm co theo màn hình*/
+        flex-wrap:wrap;
+        justify-content: space-evenly;
+        gap: 15px;
+    }
+
+        .ListProdSearch img {
+            width: 200px;
+            height: auto;
+        }
+
+    .ProdName {
+        font-style: italic;
+        font-size: 18px;
+    }
+
+    .prod-list {
+        margin-left: 0;
+    }
+</style>
+
+@if (Model.FeaturedProducts != null && Model.FeaturedProducts.Any())
+{
+
+    <div class=" prod-list" style="text-align:center;">
+
+        <h2>Sản phẩm bán chạy</h2>
+    </div>
+
+    <div class="container-fluid ListProdSearch">
+
+        @foreach (var product in Model.FeaturedProducts)
+        {
+            <div class="BoxProdSearch" style="text-align:center;">
+                <a href="@Url.Action("ProductDetail", "CustomerHome", new { id = product.ProductID })">
+                    @*chỉnh sửa đường link liên kết*@
+                    <img src="@Html.DisplayFor(modelItem => product.ProductImage)" />
+                </a>
+
+                <p class="ProdName">@product.ProductName</p>
+                <p class="prod-price" style="font-size:15px">@product.ProductPrice</p>
+            </div>
+        }
+
+
+
+    </div>
+
+
+}
