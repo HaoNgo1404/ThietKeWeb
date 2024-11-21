@@ -1,0 +1,28 @@
+@model TaYenPhuong_BE.Models.ViewModel.HomeProduct__2VM
+<div class="list-background">
+    <ul class="list">
+        <li><a href="~/Home/Index" class="menu1">Trang chủ</a></li>
+
+        <li><a href="@Url.Action("ProductsByCategory", "Home")" class="menu1">Thực đơn <i class="fa-solid fa-caret-down"></i></a>
+            <ul class="dropdown">
+                @if (Model.Categories != null)
+                {
+                    <li><p style="color:#4B7864">Danh mục thực đơn</p></li>
+                    foreach (var category in Model.Categories)
+                    {
+                        <li class="category-select" >
+                           
+                            <a href="@Url.Action("ProductsByCategory", "Home", new {  CategoryId = category.CategoryID})" >
+                                @category.CategoryName
+                            </a>
+                        </li>
+                    }
+                }
+            </ul>
+        </li>
+
+        <li><a href="~/Home/Recruit" class="menu1">Tuyển dụng</a></li>
+        <li class="dropdown-btn"><a href="~/Home/About us" class="menu1">Địa chỉ</a></li>
+        <li><a href="~/Home/Address" class="menu1">Lịch sử mua hàng</a></li>
+    </ul>
+</div>
