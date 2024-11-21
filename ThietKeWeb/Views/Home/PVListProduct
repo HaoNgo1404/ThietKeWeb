@@ -1,0 +1,72 @@
+@model TaYenPhuong_BE.Models.ViewModel.HomeProduct__2VM
+@using PagedList.Mvc
+<style>
+    .BoxProdSearch {
+        height:auto;
+        padding:10px;
+    }
+    .ListProdSearch{
+        display:flex;
+        justify-content:space-evenly;
+        gap:15px;
+       
+    }
+    .ListProdSearch img {
+        width: 200px;
+        height: auto;
+    }
+    
+    .ProdName{
+        font-style:italic;
+        font-size:18px;
+    }
+    .prod-list{
+        margin-left:0;
+    }
+   .pagination-container ul{
+       display:flex;
+       margin:0 0 10px 10px;
+      
+   }
+    .pagination-container a {
+        padding: 8px;
+        background-color: #CCCC;
+        text-decoration: none;
+        margin-right: 7px;
+        border-radius: 8px;
+        font-size:10px;
+    }
+</style>
+
+@if (Model.Products != null && Model.Products.Any())
+ { 
+    
+        <div class="prod-list" style="text-align:center;">
+
+            <h2>Sản phẩm bạn tìm kiếm</h2>
+        </div>
+
+        <div class="ListProdSearch">
+
+            @foreach (var product in Model.Products)
+             {
+                <div class="BoxProdSearch" style="text-align:center;">
+                    <a href="@Url.Action("ProductDetail", "CustomerHome", new { id = product.ProductID })" >  @*chỉnh sửa đường link liên kết*@
+                        <img src="@Html.DisplayFor(modelItem => product.ProductImage)" />
+                    </a>
+                
+                    <p class="ProdName">@product.ProductName</p>
+                    <p class="prod-price" style="font-size:15px">@product.ProductPrice</p>
+                </div>
+             }
+
+
+
+          </div>
+        <div class="pagination-container">
+            @Html.PagedListPager(Model.Products, page => Url.Action("Index", new { page, searchTerm = Model.SearchTerm }))
+        </div>
+   
+ }
+
+
