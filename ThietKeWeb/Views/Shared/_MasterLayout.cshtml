@@ -1,13 +1,12 @@
+@model TaYenPhuong_BE.Models.ViewModel.HomeProduct__2VM
 <!DOCTYPE html>
 <html>
 <head>
-    <meta name="viewport" content="width=device-width,initial-scale=" 1.0"" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewBag.Title</title>
 
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
-    <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
     <style type="text/css">
         * {
             margin: 0;
@@ -16,14 +15,17 @@
         }
 
         body {
-            margin: 0;
-            padding: 0;
+            margin: 0 auto;
+            / padding: 0;
             font-family: Arial, sans-serif;
             font-size: 20px;
             font-weight: bold;
             background-color: #FFFF;
-            text-decoration: none;
+            /*
+            text-decoration: none;*/
+
             max-width: 1920px;
+            /*            display: block;*/
         }
 
         li {
@@ -73,18 +75,19 @@
         }
 
         .search {
-            margin-left: 5vw;
-            border: 1px solid #ccc;
-            border-radius: 8px;
+            border: none;
+            border-radius: 20px;
             width: 450px;
-            padding: 6px;
+            padding: 15px;
             outline: none;
+            font-size: 18px;
+            background-color: #CCCC;
         }
 
         .search-button {
             position: absolute;
             right: 0;
-            top: 0;
+            top: 8%;
             bottom: 0;
             border: none;
             cursor: pointer;
@@ -95,11 +98,6 @@
             background: none;
         }
 
-        .search-image {
-            width: 70px;
-            height: 29px;
-            border-radius: 8px;
-        }
         /*icon mua hàng*/
         .cart {
             position: relative;
@@ -188,11 +186,11 @@
             border-radius: 2px;
         }
 
-        .ad {
+        /*        .ad {
             clear: both;
             display: flex;
             align-items: center;
-        }
+        }*/
 
 
 
@@ -229,7 +227,7 @@
         .prod-name li a:hover::after {
             opacity: 1;
         }
-        /*-------------------------------------content : trang home----------------------------------------------- */
+        /*-------------------------------------sp noi bat : trang home----------------------------------------------- */
         #featureProd {
             text-align: center;
             padding: 10px;
@@ -282,19 +280,6 @@
             transition: transform 0.2s ease;
         }
 
-            .prod-item:hover {
-                transform: translateY(-5px);
-            }
-
-        .prod-item-special1 {
-            width: 100px;
-            height: 150px;
-            transition: transform 0.2s ease;
-        }
-
-            .prod-item-special1:hover {
-                transform: translateY(-5px);
-            }
 
         .prod-box {
             /*            width: 150px;
@@ -358,7 +343,52 @@
             color: black;
             font: 50 18px Inter,;
         }
+/* dropdown menu thực đơn */
+        .list li {
+            display: inline-block;
+            position: relative;
+        }
+
+        .dropdown li {
+            display: block;
+            margin: 2px 0px;
+            padding: 5px;
+        }
+
+        .dropdown {
+            width: 250px;
+            background: #FFFF;
+            position: absolute;
+            z-index: 999;
+            display: none;
+            padding: 20px;
+            text-align: left;
+            border: 0.5px solid #cccc;
+            border-radius: 8px;
+        }
+
+            .dropdown li a{
+                
+                color: black;
+                font-size: 15px;
+                font-weight: bold;
+                padding: 10px;
+            }
+
+            .dropdown .category-select:hover {
+                background: #4B7864;
+               
+               
+            }
+            .dropdown .category-select a:hover {
+                width:100%;
+            }
+
+        ul li:hover ul.dropdown {
+            display: block;
+        }
     </style>
+
 </head>
 <body>
     @* header *@
@@ -369,10 +399,27 @@
 
             <div class="head-middle">
 
-                <input type="text" class="search" placeholder="Mời nhập nước uống bạn muốn" />
-                <button type="button" class="search-button">
-                    <img src="~/Content/images/search-icon.JPG" class="search-image" />
-                </button>
+                @using (Html.BeginForm("Index", "Home", FormMethod.Get))
+                {
+                    <div class="form-group search-container ">
+                        @Html.TextBoxFor(m => m.SearchTerm, new
+                        {
+                             @class = "search",
+                            placeholder = " Tìm kiếm sản phẩm, danh mục tại đây..."
+
+                        })
+
+
+                        <button type="submit" class="search-button">
+
+                            <i class="fa-solid fa-magnifying-glass" style="font-size:18px"></i>
+                        </button>
+
+
+                    </div>
+
+                }
+
             </div>
 
             <ul class="menu">
@@ -383,50 +430,41 @@
                     </a>
                 </li>
                 @*--------------------------------------------------------------------login--------------------------------*@
-                <li class="dropdown">
-                    @if (Session["Username"] != null)
-                    {
-                        <a href="#" data-toggle="dropdown" class="dropdown-toggle" id="selection"><img src="~/Content/images/Character-icon.png" class="selection-image" />@Session["Username"]</a>
-                        <div class="dropdown-menu">
-                            @Html.ActionLink("Thông tin tài khoản", "ProfileInfo", "Account", new { area = "" }, new { @class = "dropdown-item", @style = "color: black" })
-                            @Html.ActionLink("Đổi mật khẩu", "ChangePassword", "Account", new { area = "" }, new { @class = "dropdown-item", @style = "color: black" })
-                            <div class="dropdown-divider"></div>
-                            @Html.ActionLink("Đăng xuất", "Logout", "Account", new { area = "" }, new { @class = "dropdown-item", @style = "color: black" })
-                        </div>
-                    }
-                    else
-                    {
-                        <a href="#" data-toggle="dropdown" class="dropdown-toggle" id="selection"><img src="~/Content/images/Character-icon.png" class="selection-image" />Tài khoản</a>
-                        <div class="dropdown-menu">
-                            @Html.ActionLink("Đăng nhập", "Login", "Account", new { area = "" }, new { @class = "dropdown-item", @style = "color: black" })
-                            @Html.ActionLink("Đăng ký", "Register", "Account", new { area = "" }, new { @class = "dropdown-item", @style = "color: black" })
-                        </div>
-                    }
-                </li>
+                <li><a href="~/Home/LogIn" id="selection"><img src="~/Content/images/Character-icon.png" class="selection-image" />Tài khoản</a></li>
             </ul>
 
         </div>
 
         @*--------------------------- thanh menu ---------------------------*@
-        <div class="list-background">
+        @Html.Partial("PVThanhMenu", Model)
+        <!--<div class="list-background">
 
-            <ul class="list">
+        <ul class="list">
 
-                <li><a href="~/Home/Index" class="menu1">Trang chủ</a></li>
-                @*phần mục lục của thực đơn // chưa gắn link cho category *@
-                <li class="dropdown-btn">
-                    <a href="~/Home/ProDuctDetail" class="menu1">Thực đơn</a>                  
+            <li><a href="~/Home/Index" class="menu1">Trang chủ</a></li>-->
+        @*phần mục lục của thực đơn  chưa gắn link cho category*@
+        <!--<li><a href="~/Home/ProDuctDetail" class="menu1">Thực đơn <i class="fa-solid fa-caret-down"></i></a>
+                  <ul class="dropdown">
+                      <li> <p style="color:#4B7864">Danh mục thực đơn</p></li>
+                      <li><a href="#">Best seller </a> </li>
+                       <li><a href="#">Cà phê </a> </li>
+                       <li><a href="#">Trà </a> </li>
+                       <li><a href="#">Đá xay </a> </li>
+
+
+                  </ul>
                 </li>
 
-                <li><a href="~/Home/Recruit" class="menu1">Tuyển dụng</a></li>
-                <li class="dropdown-btn">
-                    <a href="~/Home/About us" class="menu1">Về chúng tôi</a>                  
-                </li>
-                <li><a href="~/Home/Address" class="menu1">Địa chỉ</a></li>
-            </ul>
-        </div>
+
+            <li><a href="~/Home/Recruit" class="menu1">Tuyển dụng</a></li>
+            <li class="dropdown-btn">
+                <a href="~/Home/About us" class="menu1">Địa chỉ</a>
+            </li>
+            <li><a href="~/Home/Address" class="menu1">Lịch sử mua hàng</a></li>
+        </ul>
+    </div>-->
     </header>
-    <div>
+    <div class="container">
         @RenderBody()
     </div>
     <footer id="footer">
@@ -438,12 +476,14 @@
         <div class="Team-introduce">
             <p>&copy; @DateTime.Now.Year - Email: BaronCafe@gmail.com.vn</p>
             <p class="Team-name">Ngô Quang Hào - Bạch Thị Thủy Triều - Huỳnh Thiện Tấn - Tạ Yến Phương</p>
+
+
         </div>
 
 
 
 
     </footer>
-    
+
 </body>
 </html>
